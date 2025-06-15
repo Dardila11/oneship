@@ -12,8 +12,12 @@
     "lint": "turbo run lint",
     "test": "turbo run test"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "oneship",
+    "cli",
+    "oneship-cli"
+  ],
+  "author": "Dardila11",
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
   "devDependencies": {
