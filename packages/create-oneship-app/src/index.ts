@@ -243,6 +243,91 @@ export function cn(...inputs: ClassValue[]) {
       await fs.writeJson(tsconfigPath, tsconfigJson, { spaces: 2 })
     }
 
+    if (options.auth && options.authProvider === 'next-auth') {
+      console.log("Adding NextAuth.js...");
+      await execa("pnpm", ["add", "next-auth"], { cwd: projectDir, stdio: "inherit" });
+
+      // 1. Create lib/auth.ts
+      const authTsContent = `import NextAuth from "next-auth";
+import GitHub from "next-auth/providers/github";
+import type { NextAuthConfig } from "next-auth";
+
+export const config = {
+  theme: {
+    logo: "https://next-auth.js.org/img/logo/logo-sm.png",
+  },
+  providers: [
+    GitHub({
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
+  ],
+  callbacks: {
+    authorized({ request, auth }) {
+      const { pathname } = request.nextUrl;
+      if (pathname === "/middleware-example") return !!auth;
+      return true;
+    },
+  },
+} satisfies NextAuthConfig;
+
+export const { handlers, auth, signIn, signOut } = NextAuth(config);`;
+      await fs.writeFile(path.join(projectDir, "lib", "auth.ts"), authTsContent);
+
+      // 2. Create app/api/auth/[...nextauth]/route.ts
+      const apiRouteDir = path.join(projectDir, "app", "api", "auth", "[...nextauth]");
+      await fs.ensureDir(apiRouteDir);
+      const apiRouteContent = `export { handlers as GET, handlers as POST } from "@/lib/auth";`;
+      await fs.writeFile(path.join(apiRouteDir, "route.ts"), apiRouteContent);
+
+      // 3. Create components/providers.tsx
+      const componentsDir = path.join(projectDir, "components");
+      await fs.ensureDir(componentsDir);
+      const providersContent = `"use client";
+import { SessionProvider } from "next-auth/react";
+import type { ReactNode } from "react";
+
+export function Providers({ children }: { children: ReactNode }) {
+  return <SessionProvider>{children}</SessionProvider>;
+}`;
+      await fs.writeFile(path.join(componentsDir, "providers.tsx"), providersContent);
+
+      // 4. Update app/layout.tsx
+      const layoutPath = path.join(projectDir, "app", "layout.tsx");
+      let layoutContent = await fs.readFile(layoutPath, "utf-8");
+      
+      if (!layoutContent.includes('import { Providers }')) {
+        layoutContent = layoutContent.replace(
+          'import type { ReactNode } from \\'react\\';',
+          'import type { ReactNode } from \\'react\\';\nimport { Providers } from "@/components/providers";'
+        );
+        layoutContent = layoutContent.replace(
+          '<body>{children}</body>',
+          '<body><Providers>{children}</Providers></body>'
+        );
+        await fs.writeFile(layoutPath, layoutContent);
+      }
+      
+      // 5. Create or update .env file with NEXTAUTH_SECRET
+      const envPath = path.join(projectDir, ".env");
+      const envContentToAdd = `
+# NextAuth.js
+NEXTAUTH_SECRET="your-super-secret-key-here" # Replace with output from: openssl rand -base64 32
+NEXTAUTH_URL="http://localhost:3000"
+
+# GitHub OAuth
+GITHUB_ID=""
+GITHUB_SECRET=""
+`;
+      
+      let existingEnvContent = "";
+      if (await fs.pathExists(envPath)) {
+        existingEnvContent = await fs.readFile(envPath, "utf-8");
+      }
+
+      await fs.writeFile(envPath, existingEnvContent + envContentToAdd);
+    }
+
     // Install dependencies
     console.log("Installing dependencies...")
     await execa("pnpm", ["install"], { cwd: projectDir, stdio: "inherit" })
