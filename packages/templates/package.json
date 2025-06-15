@@ -1,13 +1,20 @@
 {
-  "name": "templates",
-  "version": "1.0.0",
-  "description": "",
+  "name": "oneship-templates",
+  "version": "0.0.1",
+  "description": "Project and feature templates for OneShip scaffolding.",
   "main": "index.js",
+  "files": [
+    "base"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "oneship",
+    "templates",
+    "scaffolding"
+  ],
+  "author": "Dardila11",
   "license": "ISC",
   "packageManager": "pnpm@10.12.1"
 }

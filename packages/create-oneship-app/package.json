@@ -1,24 +1,34 @@
 {
   "name": "create-oneship-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Create a new Oneship app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "create-oneship-app": "dist/index.js"
+  },
   "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "oneship",
+    "cli",
+    "oneship-cli"
+  ],
+  "author": "Dardila11",
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
-    "commander": "^14.0.0",
+    "commander": "^11.0.0",
     "execa": "^9.6.0",
     "fs-extra": "^11.3.0",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^24.0.1",
-    "typescript": "^5.8.3"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   }
 }
