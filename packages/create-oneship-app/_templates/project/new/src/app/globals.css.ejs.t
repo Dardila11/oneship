@@ -1,9 +1,8 @@
 ---
 to: <%= name %>/src/app/globals.css
 ---
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
 :root {
   --foreground-rgb: 0, 0, 0;

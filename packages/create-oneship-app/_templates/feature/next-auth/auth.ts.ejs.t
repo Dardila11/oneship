@@ -1,5 +1,5 @@
 ---
-to: <%= name %>/lib/auth.ts
+to: <%= name %>/src/lib/auth.ts
 ---
 import NextAuth from "next-auth"
 import GitHub from "next-auth/providers/github"

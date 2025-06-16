@@ -55,12 +55,6 @@ export async function handleNewProject(projectDirectory?: string) {
       initial: true,
     },
     {
-      type: (prev: boolean) => (prev ? "confirm" : null),
-      name: "shadcn",
-      message: "Use Shadcn UI?",
-      initial: true,
-    },
-    {
       type: "select",
       name: "value",
       message: "Select auth provider:",
@@ -73,6 +67,12 @@ export async function handleNewProject(projectDirectory?: string) {
       ],
       initial: 0,
       skip: (prev: any, values: any) => !values.auth,
+    },
+    {
+      type: (prev: boolean) => (prev ? "confirm" : null),
+      name: "shadcn",
+      message: "Use Shadcn UI?",
+      initial: true,
     },
   ])
 

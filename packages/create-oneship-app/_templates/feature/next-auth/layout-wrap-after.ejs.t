@@ -1,5 +1,5 @@
 ---
-to: <%= name %>/app/layout.tsx
+to: <%= name %>/src/app/layout.tsx
 inject: true
 after: "{children}"
 ---

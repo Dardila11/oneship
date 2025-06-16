@@ -1,5 +1,5 @@
 ---
-to: <%= name %>/app/providers.tsx
+to: <%= name %>/src/app/providers.tsx
 inject: true
 ---
 
