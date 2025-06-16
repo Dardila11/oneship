@@ -1,4 +1,4 @@
 ---
-to: <%= name %>/app/globals.css
+to: <%= name %>/src/app/globals.css
 ---
 @import "tailwindcss";

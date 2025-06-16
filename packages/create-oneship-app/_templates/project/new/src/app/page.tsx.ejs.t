@@ -1,5 +1,5 @@
 ---
-to: <%= name %>/app/page.tsx
+to: <%= name %>/src/app/page.tsx
 ---
 
 export default function Home() {

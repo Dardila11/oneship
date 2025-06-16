@@ -1,5 +1,5 @@
 ---
-to: <%= name %>/app/layout.tsx
+to: <%= name %>/src/app/layout.tsx
 ---
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
