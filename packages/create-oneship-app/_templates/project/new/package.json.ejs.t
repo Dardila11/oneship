@@ -12,18 +12,18 @@ to: <%= name %>/package.json
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "next": "15.3.3"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "typescript": "^5.8.3",
+    "@types/node": "^24.0.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "postcss": "^8.5.5",
+    "tailwindcss": "^4.1.10",
+    "eslint": "^9.29.0",
+    "eslint-config-next": "15.3.3"
   }
 } 

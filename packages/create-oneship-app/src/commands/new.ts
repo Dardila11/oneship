@@ -23,6 +23,11 @@ export async function handleNewProject(projectDirectory?: string) {
     process.exit(1)
   }
 
+  // TODO: check if the project directory already exists
+  if (fs.existsSync(name)) {
+    console.error("Project directory already exists.")
+    process.exit(1)
+  }
   const projectDir = path.resolve(process.cwd(), name)
   await fs.ensureDir(projectDir)
 
@@ -41,17 +46,8 @@ export async function handleNewProject(projectDirectory?: string) {
     },
   })
 
+  // TODO: if tailwind is false, chadcn should be false too
   const options = await prompts([
-    {
-      type: "select",
-      name: "language",
-      message: "JavaScript or TypeScript?",
-      choices: [
-        { title: "TypeScript", value: "typescript" },
-        { title: "JavaScript", value: "javascript" },
-      ],
-      initial: 0,
-    },
     {
       type: "confirm",
       name: "tailwind",
@@ -59,25 +55,21 @@ export async function handleNewProject(projectDirectory?: string) {
       initial: true,
     },
     {
-      type: "confirm",
+      type: (prev: boolean) => (prev ? "confirm" : null),
       name: "shadcn",
-      message: "Add Shadcn UI?",
-      initial: false,
-    },
-    {
-      type: "confirm",
-      name: "auth",
-      message: "Include Auth?",
-      initial: false,
+      message: "Use Shadcn UI?",
+      initial: true,
     },
     {
       type: "select",
-      name: "authProvider",
+      name: "value",
       message: "Select auth provider:",
       choices: [
         { title: "Clerk", value: "clerk" },
         { title: "NextAuth.js", value: "next-auth" },
         { title: "Supabase Auth", value: "supabase" },
+        { title: "BetterAuth", value: "better-auth" },
+        { title: "None", value: "none" },
       ],
       initial: 0,
       skip: (prev: any, values: any) => !values.auth,
@@ -98,17 +90,32 @@ export async function handleNewProject(projectDirectory?: string) {
     console.log("Adding Tailwind CSS dependencies...")
     await execa(
       "pnpm",
-      ["install", "-D", "tailwindcss", "postcss", "autoprefixer"],
+      ["install", "-D", "tailwindcss", "postcss", "@tailwindcss/postcss"],
       { cwd: projectDir, stdio: "inherit" }
     )
   }
 
   if (options.shadcn) {
-    // Shadcn UI generator logic will go here
+    console.log("Initializing Shadcn UI...")
+    // Note: this will be interactive as shadcn-ui init doesn't support full non-interactive setup
+    await execa("pnpm", ["dlx", "shadcn@latest", "init"], {
+      cwd: projectDir,
+      stdio: "inherit",
+    })
   }
 
   if (options.auth && options.authProvider === "next-auth") {
     // NextAuth.js generator logic will go here
+    await runner(["feature", "next-auth", "--name", name], {
+      templates: defaultTemplates,
+      cwd: process.cwd(),
+      logger,
+      createPrompter: () => prompts,
+      exec: (action, body) => {
+        const opts = body && body.length > 0 ? { input: body } : {}
+        return execa(action, { ...opts, shell: true })
+      },
+    })
   }
 
   console.log("Installing dependencies...")
