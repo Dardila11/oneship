@@ -484,6 +484,15 @@
             "details": "Implement a template integration system that:\n1. Creates a mapping between user selections and template files\n2. Handles dependencies between features (e.g., Shadcn requires Tailwind)\n3. Resolves conflicts between different template options\n4. Provides a consistent file structure regardless of selected options\n5. Includes a template.json file for each feature describing its files and dependencies\n\nThe system should be able to merge configurations when multiple selected features modify the same files (e.g., tailwind.config.ts).",
             "status": "pending",
             "testStrategy": "Test various combinations of feature selections to ensure all templates are correctly integrated without conflicts."
+          },
+          {
+            "id": 6,
+            "title": "use specific version for each dependencie",
+            "description": "",
+            "details": "",
+            "status": "pending",
+            "dependencies": [],
+            "parentTaskId": 8
           }
         ]
       },
