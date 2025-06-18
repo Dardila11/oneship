@@ -1,6 +1,5 @@
 ---
 to: <%= name %>/src/app/providers.tsx
-inject: true
 ---
 
 "use client"

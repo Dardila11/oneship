@@ -1,0 +1,621 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Setup CLI Project Structure",
+        "description": "Initialize the CLI project with core dependencies and basic file structure",
+        "details": "Create a new Node.js project with the following steps:\n1. Initialize package.json with `npm init -y`\n2. Install core dependencies:\n   - commander: For parsing command-line arguments\n   - prompts: For interactive user prompts\n   - hygen: For file scaffolding\n   - execa: For executing child processes\n   - fs-extra: For file system operations\n3. Setup TypeScript configuration\n4. Create basic directory structure:\n   - src/\n     - index.ts (entry point)\n     - commands/\n     - templates/\n     - utils/\n5. Configure package.json with appropriate bin entry and scripts\n6. Setup ESLint and Prettier for code quality",
+        "testStrategy": "1. Verify project structure is correctly set up\n2. Ensure all dependencies are properly installed\n3. Validate TypeScript configuration\n4. Test basic CLI invocation to ensure the entry point works",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Node.js Project with Core Dependencies",
+            "description": "Create the base Node.js project and install all required dependencies for the CLI tool",
+            "dependencies": [],
+            "details": "Run `npm init -y` to create package.json with default values. Then install core dependencies with `npm install commander prompts hygen execa fs-extra` and dev dependencies with `npm install --save-dev typescript @types/node ts-node`. Update package.json with appropriate name, description, and version fields.",
+            "status": "done",
+            "testStrategy": "Verify package.json contains correct dependencies and configuration by running `npm list`"
+          },
+          {
+            "id": 2,
+            "title": "Configure TypeScript and Project Structure",
+            "description": "Set up TypeScript configuration and create the basic directory structure for the project",
+            "dependencies": [
+              1
+            ],
+            "details": "Create tsconfig.json with appropriate settings for a Node.js CLI (target ES2018+, module CommonJS, outDir ./dist). Create the directory structure: src/ with subdirectories for commands/, templates/, and utils/. Create an empty src/index.ts file as the entry point.",
+            "status": "done",
+            "testStrategy": "Ensure TypeScript compiles without errors by running `npx tsc --noEmit`"
+          },
+          {
+            "id": 3,
+            "title": "Implement CLI Entry Point",
+            "description": "Create the main CLI entry point that will parse commands and route to the appropriate handlers",
+            "dependencies": [
+              2
+            ],
+            "details": "In src/index.ts, implement the CLI entry point using Commander.js. Create a basic command structure that can be extended later. Add a shebang line at the top: #!/usr/bin/env node. Configure package.json with a 'bin' field pointing to the compiled entry point and add build scripts (build, dev, start).",
+            "status": "done",
+            "testStrategy": "Test the CLI responds to --help flag by building and running the CLI locally"
+          },
+          {
+            "id": 4,
+            "title": "Setup Code Quality Tools",
+            "description": "Configure ESLint and Prettier for consistent code formatting and quality",
+            "dependencies": [
+              2
+            ],
+            "details": "Install ESLint and Prettier with `npm install --save-dev eslint prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-prettier eslint-plugin-prettier`. Create configuration files (.eslintrc.js, .prettierrc) with appropriate rules. Add lint and format scripts to package.json.",
+            "status": "done",
+            "testStrategy": "Run `npm run lint` to verify ESLint is properly configured and detects issues"
+          },
+          {
+            "id": 5,
+            "title": "Create Basic Utility Functions",
+            "description": "Implement common utility functions that will be used across the CLI tool",
+            "dependencies": [
+              3
+            ],
+            "details": "In src/utils/, create utility modules for: 1) file operations (using fs-extra), 2) process execution (using execa), 3) user interaction (using prompts), and 4) logging with different levels (info, warning, error). Export these utilities from a barrel file (index.ts) for easy importing.",
+            "status": "done",
+            "testStrategy": "Create simple unit tests for utility functions using a testing framework like Jest"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Implement Command-Line Interface",
+        "description": "Create the core CLI functionality with command parsing and both interactive and flag-based modes",
+        "details": "Using the commander package, implement the CLI interface:\n\n```typescript\n// src/index.ts\nimport { Command } from 'commander';\nimport { runInteractiveMode } from './commands/interactive';\nimport { runFlagBasedMode } from './commands/flagBased';\n\nconst program = new Command();\n\nprogram\n  .name('create-oneship-app')\n  .description('Scaffold a new, production-ready Next.js project')\n  .version('1.0.0')\n  .argument('<project-name>', 'Name of the project directory')\n  .option('--tailwind', 'Enable Tailwind CSS')\n  .option('--shadcn', 'Enable Shadcn UI (implies Tailwind)')\n  .option('--auth <provider>', 'Select authentication provider: next-auth, clerk, supabase-auth, lucia, none')\n  .option('--orm <orm>', 'Select database ORM: drizzle, prisma, none')\n  .option('--db <database>', 'Select database type: postgres, mysql, sqlite')\n  .action(async (projectName, options) => {\n    // Check if any flags are provided to determine mode\n    const hasFlagsProvided = options.tailwind || options.shadcn || options.auth || options.orm || options.db;\n    \n    if (hasFlagsProvided) {\n      await runFlagBasedMode(projectName, options);\n    } else {\n      await runInteractiveMode(projectName);\n    }\n  });\n\nprogram.parse();\n```\n\nCreate placeholder files for the interactive and flag-based mode handlers.",
+        "testStrategy": "1. Test CLI with only project name to ensure it enters interactive mode\n2. Test CLI with various flag combinations to ensure it enters flag-based mode\n3. Verify help text is displayed correctly with `--help` flag\n4. Test error handling for invalid arguments or options",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Commander.js and CLI entry point",
+            "description": "Initialize the CLI application with Commander.js, define the command structure, and create the entry point file.",
+            "dependencies": [],
+            "details": "Create the src/index.ts file with the Commander.js setup as provided in the task description. Define the program name, description, version, and command-line arguments/options. Set up the basic logic to determine whether to run in interactive or flag-based mode based on the provided options.",
+            "status": "done",
+            "testStrategy": "Test the CLI entry point by running it with --help flag to verify all options are correctly displayed. Also test with --version to ensure version information is shown."
+          },
+          {
+            "id": 2,
+            "title": "Create interactive mode handler",
+            "description": "Implement the interactive command-line interface that prompts users for project configuration options.",
+            "dependencies": [],
+            "details": "Create src/commands/interactive.ts file that exports a runInteractiveMode function. Use a library like inquirer.js to implement interactive prompts for project name, UI framework (Tailwind, Shadcn), authentication provider, ORM, and database selection. The function should collect user responses and prepare them for the project scaffolding process.",
+            "status": "done",
+            "testStrategy": "Test the interactive mode by mocking user inputs and verifying that the collected configuration matches expected values."
+          },
+          {
+            "id": 3,
+            "title": "Implement flag-based mode handler",
+            "description": "Create the handler for non-interactive, flag-based CLI operation that processes command-line arguments directly.",
+            "dependencies": [],
+            "details": "Create src/commands/flagBased.ts file that exports a runFlagBasedMode function. This function should validate the provided command-line options, set default values for missing options, and prepare the configuration for project scaffolding. Include validation logic to ensure compatible options (e.g., shadcn implies tailwind).",
+            "status": "done",
+            "testStrategy": "Test with various combinations of flags to ensure proper validation and configuration generation. Include tests for incompatible options and edge cases."
+          },
+          {
+            "id": 4,
+            "title": "Implement configuration validation and normalization",
+            "description": "Create utilities to validate and normalize configuration regardless of input method.",
+            "dependencies": [],
+            "details": "Create src/utils/config.ts with functions to validate and normalize configuration options from both interactive and flag-based modes. Implement validation for compatible options (e.g., if shadcn is selected, tailwind must be enabled). Create helper functions to set default values for unspecified options and ensure all required configuration is present.",
+            "status": "done",
+            "testStrategy": "Unit test the validation functions with various input configurations, including valid and invalid combinations."
+          },
+          {
+            "id": 5,
+            "title": "Connect CLI to scaffolding process",
+            "description": "Link the CLI interface to the actual project scaffolding functionality.",
+            "dependencies": [],
+            "details": "Create a src/scaffold.ts file that will be called by both interactive and flag-based modes after configuration is complete. This file should contain the logic to take the validated configuration and begin the project creation process. Implement basic logging to show progress to the user. This serves as the bridge between the CLI interface and the actual project generation code that will be implemented later.",
+            "status": "done",
+            "testStrategy": "Create integration tests that verify the entire flow from CLI input to scaffold function call, ensuring the correct configuration is passed through."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement Interactive Prompts",
+        "description": "Create the interactive prompt sequence for project configuration",
+        "details": "Using the prompts package, implement the interactive prompt sequence:\n\n```typescript\n// src/commands/interactive.ts\nimport prompts from 'prompts';\nimport { scaffoldProject } from '../utils/scaffold';\n\nexport async function runInteractiveMode(projectName: string) {\n  const questions = [\n    {\n      type: 'confirm',\n      name: 'tailwind',\n      message: 'Would you like to use Tailwind CSS for styling?',\n      initial: true\n    },\n    {\n      type: prev => prev ? 'confirm' : null,\n      name: 'shadcn',\n      message: 'Add Shadcn UI for your component library?',\n      initial: true\n    },\n    {\n      type: 'select',\n      name: 'auth',\n      message: 'Select an Authentication provider:',\n      choices: [\n        { title: 'Next-Auth', value: 'next-auth' },\n        { title: 'Clerk', value: 'clerk' },\n        { title: 'Supabase Auth', value: 'supabase-auth' },\n        { title: 'Lucia', value: 'lucia' },\n        { title: 'None', value: 'none' }\n      ]\n    },\n    {\n      type: 'select',\n      name: 'orm',\n      message: 'Select a Database ORM:',\n      choices: [\n        { title: 'Drizzle', value: 'drizzle' },\n        { title: 'Prisma', value: 'prisma' },\n        { title: 'None', value: 'none' }\n      ]\n    },\n    {\n      type: (prev) => (prev === 'drizzle' || prev === 'prisma') ? 'select' : null,\n      name: 'db',\n      message: 'Choose your database type:',\n      choices: [\n        { title: 'PostgreSQL', value: 'postgres' },\n        { title: 'MySQL', value: 'mysql' },\n        { title: 'SQLite', value: 'sqlite' }\n      ]\n    }\n  ];\n\n  const answers = await prompts(questions, {\n    onCancel: () => {\n      console.log('\\nSetup canceled. Exiting...');\n      process.exit(0);\n    }\n  });\n\n  await scaffoldProject(projectName, answers);\n}\n```",
+        "testStrategy": "1. Test each prompt individually to ensure correct behavior\n2. Verify conditional prompts (e.g., Shadcn UI only shows if Tailwind is selected)\n3. Test the database type prompt only appears when an ORM is selected\n4. Verify cancellation handling works correctly\n5. Test the full prompt sequence end-to-end",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Basic Interactive Prompt Structure",
+            "description": "Set up the initial interactive.ts file with the basic structure for prompts and scaffolding integration",
+            "dependencies": [],
+            "details": "Create the src/commands/interactive.ts file with the basic imports and runInteractiveMode function skeleton. Set up the prompts package integration and implement the basic structure that will handle user input and pass it to the scaffolding function. Include proper error handling and process exit functionality for cancellations.",
+            "status": "done",
+            "testStrategy": "Test the basic structure by mocking prompt responses and verifying the function calls scaffoldProject with the expected arguments."
+          },
+          {
+            "id": 2,
+            "title": "Implement UI Framework Selection Prompts",
+            "description": "Add the prompts for Tailwind CSS and Shadcn UI selection with conditional logic",
+            "dependencies": [],
+            "details": "Implement the first two prompts in the sequence: Tailwind CSS selection and the conditional Shadcn UI prompt that only appears if Tailwind is selected. Ensure the conditional logic works correctly with the 'prev' parameter. Format the prompts with clear messaging and appropriate default values.",
+            "status": "done",
+            "testStrategy": "Test both the Tailwind selection and verify the conditional logic for Shadcn UI appears only when Tailwind is selected."
+          },
+          {
+            "id": 3,
+            "title": "Implement Authentication Provider Selection",
+            "description": "Add the prompt for selecting an authentication provider with multiple options",
+            "dependencies": [],
+            "details": "Implement the authentication provider selection prompt with all the specified options (Next-Auth, Clerk, Supabase Auth, Lucia, None). Ensure the select prompt is properly configured with all choices and their corresponding values. Add appropriate messaging to guide the user through this selection.",
+            "status": "done",
+            "testStrategy": "Test that all authentication options are displayed correctly and the selected value is properly captured in the answers object."
+          },
+          {
+            "id": 4,
+            "title": "Implement Database ORM Selection",
+            "description": "Add the prompt for selecting a database ORM with conditional database type selection",
+            "dependencies": [],
+            "details": "Implement the database ORM selection prompt with the specified options (Drizzle, Prisma, None). Then implement the conditional database type selection prompt that only appears if Drizzle or Prisma is selected. Ensure the conditional logic works correctly using the 'prev' parameter to check the ORM selection.",
+            "status": "done",
+            "testStrategy": "Test the ORM selection and verify the conditional database type prompt appears only when Drizzle or Prisma is selected. Test all possible paths through this decision tree."
+          },
+          {
+            "id": 5,
+            "title": "Connect Prompt Results to Scaffolding Function",
+            "description": "Finalize the interactive mode by connecting the prompt results to the scaffolding function",
+            "dependencies": [],
+            "details": "Complete the implementation by adding the code to pass the collected answers to the scaffoldProject function. Add appropriate console output to inform the user about the progress. Implement proper error handling for the scaffolding process and ensure the function correctly exits after completion or on error. Add any final validation of the collected answers before passing them to the scaffolding function.",
+            "status": "done",
+            "testStrategy": "Test the full flow from prompt collection to scaffolding function call. Mock the scaffoldProject function and verify it receives the correct configuration based on different prompt responses."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Implement Flag-Based Mode",
+        "description": "Create the flag-based mode for non-interactive project configuration",
+        "details": "Implement the flag-based mode handler:\n\n```typescript\n// src/commands/flagBased.ts\nimport { scaffoldProject } from '../utils/scaffold';\n\ninterface FlagOptions {\n  tailwind?: boolean;\n  shadcn?: boolean;\n  auth?: string;\n  orm?: string;\n  db?: string;\n}\n\nexport async function runFlagBasedMode(projectName: string, options: FlagOptions) {\n  // Validate options\n  if (options.shadcn) {\n    // Shadcn implies Tailwind\n    options.tailwind = true;\n  }\n\n  if (options.auth && !['next-auth', 'clerk', 'supabase-auth', 'lucia', 'none'].includes(options.auth)) {\n    console.error(`Error: Invalid auth provider '${options.auth}'. Must be one of: next-auth, clerk, supabase-auth, lucia, none`);\n    process.exit(1);\n  }\n\n  if (options.orm && !['drizzle', 'prisma', 'none'].includes(options.orm)) {\n    console.error(`Error: Invalid ORM '${options.orm}'. Must be one of: drizzle, prisma, none`);\n    process.exit(1);\n  }\n\n  if (options.db && !['postgres', 'mysql', 'sqlite'].includes(options.db)) {\n    console.error(`Error: Invalid database type '${options.db}'. Must be one of: postgres, mysql, sqlite`);\n    process.exit(1);\n  }\n\n  // If ORM is specified but DB is not, prompt for DB type\n  if ((options.orm === 'drizzle' || options.orm === 'prisma') && !options.db) {\n    const { db } = await import('prompts').then(m => m.default)({\n      type: 'select',\n      name: 'db',\n      message: 'Choose your database type:',\n      choices: [\n        { title: 'PostgreSQL', value: 'postgres' },\n        { title: 'MySQL', value: 'mysql' },\n        { title: 'SQLite', value: 'sqlite' }\n      ]\n    });\n    options.db = db;\n  }\n\n  await scaffoldProject(projectName, options);\n}\n```",
+        "testStrategy": "1. Test with various flag combinations to ensure correct behavior\n2. Verify validation logic for invalid options\n3. Test the conditional DB prompt when ORM is specified without DB\n4. Test error handling and exit codes\n5. Verify that --shadcn implies --tailwind",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement option validation logic",
+            "description": "Create validation functions for flag options to ensure they contain valid values",
+            "dependencies": [],
+            "details": "Create helper functions to validate each option type (auth, orm, db). Extract the validation logic from the runFlagBasedMode function into separate functions for better maintainability. Include proper error messages and validation checks for each option type. Ensure shadcn implies tailwind is properly handled.",
+            "status": "done",
+            "testStrategy": "Write unit tests for each validation function with valid and invalid inputs to ensure proper validation behavior."
+          },
+          {
+            "id": 2,
+            "title": "Implement database type resolution",
+            "description": "Create logic to handle cases where ORM is specified but database type is not",
+            "dependencies": [],
+            "details": "Extract the database resolution logic into a separate async function that checks if an ORM is specified without a database type. If needed, use prompts to ask the user for the database type. Return the resolved database type. Handle edge cases like the user canceling the prompt.",
+            "status": "done",
+            "testStrategy": "Test with mock prompts to verify the function correctly prompts for database type when needed and returns the expected result."
+          },
+          {
+            "id": 3,
+            "title": "Create option normalization function",
+            "description": "Implement a function to normalize and prepare options before scaffolding",
+            "dependencies": [],
+            "details": "Create a function that takes the raw flag options and normalizes them (e.g., ensuring shadcn implies tailwind, resolving database types if needed). This function should handle any option dependencies and ensure the final options object is consistent and ready for scaffolding.",
+            "status": "done",
+            "testStrategy": "Test with various combinations of input options to ensure proper normalization and handling of option dependencies."
+          },
+          {
+            "id": 4,
+            "title": "Integrate with scaffolding system",
+            "description": "Connect the flag-based mode to the project scaffolding system",
+            "dependencies": [],
+            "details": "Ensure the normalized options are properly passed to the scaffoldProject function. Handle any specific transformations needed between the flag options format and what the scaffold system expects. Add proper error handling for scaffolding failures.",
+            "status": "done",
+            "testStrategy": "Create integration tests that verify the entire flow from flag options to scaffold function calls, using mocks for the actual scaffolding."
+          },
+          {
+            "id": 5,
+            "title": "Add CLI command registration",
+            "description": "Register the flag-based mode with the CLI command system",
+            "dependencies": [],
+            "details": "Update the CLI command registration to include all supported flags with proper descriptions and types. Ensure the runFlagBasedMode function is properly connected to the CLI system. Add help text for each flag option to explain its purpose and valid values.",
+            "status": "done",
+            "testStrategy": "Test the CLI command registration by verifying help output includes all flags and that the command properly passes flag values to the runFlagBasedMode function."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Create Project Scaffolding Utility",
+        "description": "Implement the core scaffolding functionality to generate the Next.js project structure",
+        "details": "Create the scaffolding utility that will generate the project files:\n\n```typescript\n// src/utils/scaffold.ts\nimport path from 'path';\nimport fs from 'fs-extra';\nimport { execa } from 'execa';\nimport { generateTemplates } from './templates';\n\ninterface ProjectOptions {\n  tailwind?: boolean;\n  shadcn?: boolean;\n  auth?: string;\n  orm?: string;\n  db?: string;\n}\n\nexport async function scaffoldProject(projectName: string, options: ProjectOptions) {\n  const projectDir = path.resolve(process.cwd(), projectName);\n  \n  // Check if directory exists\n  if (fs.existsSync(projectDir)) {\n    const { overwrite } = await import('prompts').then(m => m.default)({\n      type: 'confirm',\n      name: 'overwrite',\n      message: `Directory '${projectName}' already exists. Do you want to overwrite it?`,\n      initial: false\n    });\n    \n    if (!overwrite) {\n      console.log('\\nSetup canceled. Exiting...');\n      process.exit(0);\n    }\n    \n    await fs.emptyDir(projectDir);\n  }\n  \n  // Create project directory\n  await fs.ensureDir(projectDir);\n  \n  console.log(`\\nCreating a new Next.js app in ${projectDir}...`);\n  \n  // Generate project files based on options\n  await generateTemplates(projectDir, options);\n  \n  // Install dependencies\n  console.log('\\nInstalling dependencies...');\n  await execa('npm', ['install'], { cwd: projectDir, stdio: 'inherit' });\n  \n  // Initialize git repository\n  console.log('\\nInitializing git repository...');\n  await execa('git', ['init'], { cwd: projectDir });\n  await execa('git', ['add', '.'], { cwd: projectDir });\n  await execa('git', ['commit', '-m', 'Initial commit from create-oneship-app'], { cwd: projectDir });\n  \n  // Display success message\n  console.log('\\n🚀 Success! Created', projectName, 'at', projectDir);\n  console.log('\\nInside that directory, you can run several commands:');\n  console.log('\\n  npm run dev');\n  console.log('    Starts the development server.');\n  console.log('\\n  npm run build');\n  console.log('    Builds the app for production.');\n  console.log('\\n  npm start');\n  console.log('    Runs the built app in production mode.');\n  console.log('\\nWe suggest that you begin by typing:');\n  console.log('\\n  cd', projectName);\n  console.log('  npm run dev');\n  console.log('\\nHappy hacking!');\n}\n```",
+        "testStrategy": "1. Test scaffolding with various option combinations\n2. Verify directory creation and overwrite confirmation\n3. Test error handling during file generation\n4. Mock npm install and git init to test post-scaffolding steps\n5. Verify success message output",
+        "priority": "high",
+        "dependencies": [
+          3,
+          4
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Project Directory Setup Logic",
+            "description": "Create the functionality to check if a project directory exists, handle overwrite confirmation, and set up the initial directory structure.",
+            "dependencies": [],
+            "details": "Extract the directory setup logic from the scaffoldProject function into a separate function that handles checking if the directory exists, prompting for overwrite confirmation using the prompts library, and creating/emptying the directory as needed. This function should return the validated project directory path or exit the process if the user cancels.",
+            "status": "done",
+            "testStrategy": "Test with both existing and non-existing directory paths. Mock the prompts library to simulate user confirmation and cancellation scenarios."
+          },
+          {
+            "id": 2,
+            "title": "Implement Template Generation Integration",
+            "description": "Connect the scaffolding utility to the template generation system that will create the actual project files based on user options.",
+            "dependencies": [],
+            "details": "Create the integration with the generateTemplates function (which will be implemented separately). Ensure proper parameter passing including the project directory and all user-selected options. Add appropriate error handling for template generation failures.",
+            "status": "done",
+            "testStrategy": "Mock the generateTemplates function to verify it's called with the correct parameters. Test error handling by simulating template generation failures."
+          },
+          {
+            "id": 3,
+            "title": "Implement Dependency Installation Logic",
+            "description": "Create the functionality to install npm dependencies in the newly created project.",
+            "dependencies": [],
+            "details": "Implement the dependency installation logic using execa to run npm install in the project directory. Add proper error handling and console output to show progress. Consider adding a timeout or retry mechanism for network issues.",
+            "status": "done",
+            "testStrategy": "Mock execa to verify npm install is called with the correct parameters. Test error handling by simulating installation failures."
+          },
+          {
+            "id": 4,
+            "title": "Implement Git Repository Initialization",
+            "description": "Create the functionality to initialize a git repository, add all files, and create an initial commit.",
+            "dependencies": [],
+            "details": "Implement the git initialization logic using execa to run git commands (init, add, commit) in the project directory. Add error handling for cases where git might not be installed or accessible. Make the initial commit message configurable.",
+            "status": "done",
+            "testStrategy": "Mock execa to verify git commands are called in the correct sequence with the right parameters. Test error handling by simulating git command failures."
+          },
+          {
+            "id": 5,
+            "title": "Implement Success Message and Instructions Display",
+            "description": "Create the functionality to display a success message and helpful instructions after project creation is complete.",
+            "dependencies": [],
+            "details": "Implement the final part of the scaffoldProject function that displays the success message and instructions for using the newly created project. Format the output to be clear and visually appealing. Consider using a console styling library like chalk for better formatting.",
+            "status": "done",
+            "testStrategy": "Mock console.log to verify the correct messages are displayed. Test with different project names to ensure the instructions are correctly customized."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Implement Template Generation System",
+        "description": "Create the template generation system using Hygen to scaffold project files based on user selections",
+        "details": "Implement the template generation system:\n\n```typescript\n// src/utils/templates.ts\nimport path from 'path';\nimport fs from 'fs-extra';\nimport { execa } from 'execa';\n\ninterface ProjectOptions {\n  tailwind?: boolean;\n  shadcn?: boolean;\n  auth?: string;\n  orm?: string;\n  db?: string;\n}\n\nexport async function generateTemplates(projectDir: string, options: ProjectOptions) {\n  // Create base Next.js app structure\n  await generateBaseNextApp(projectDir);\n  \n  // Apply feature-specific templates\n  if (options.tailwind) {\n    await generateTailwindConfig(projectDir);\n  }\n  \n  if (options.shadcn) {\n    await generateShadcnUI(projectDir);\n  }\n  \n  if (options.auth && options.auth !== 'none') {\n    await generateAuthConfig(projectDir, options.auth);\n  }\n  \n  if (options.orm && options.orm !== 'none') {\n    await generateDatabaseConfig(projectDir, options.orm, options.db);\n  }\n  \n  // Generate environment variables\n  await generateEnvFiles(projectDir, options);\n}\n\nasync function generateBaseNextApp(projectDir: string) {\n  // Create basic Next.js app structure\n  const templateDir = path.resolve(__dirname, '../../templates/base');\n  await fs.copy(templateDir, projectDir);\n  \n  // Create package.json\n  const packageJson = {\n    name: path.basename(projectDir),\n    version: '0.1.0',\n    private: true,\n    scripts: {\n      dev: 'next dev',\n      build: 'next build',\n      start: 'next start',\n      lint: 'next lint'\n    },\n    dependencies: {\n      next: '^14.0.0',\n      react: '^18.2.0',\n      'react-dom': '^18.2.0'\n    },\n    devDependencies: {\n      '@types/node': '^20.8.0',\n      '@types/react': '^18.2.0',\n      '@types/react-dom': '^18.2.0',\n      typescript: '^5.2.0',\n      eslint: '^8.50.0',\n      'eslint-config-next': '^14.0.0'\n    }\n  };\n  \n  await fs.writeJSON(path.join(projectDir, 'package.json'), packageJson, { spaces: 2 });\n}\n\n// Implement other template generation functions for each feature\n// ...\n```\n\nCreate template files for each feature in a `templates` directory:\n- Base Next.js app structure\n- Tailwind CSS configuration\n- Shadcn UI components\n- Authentication providers\n- Database ORM configurations",
+        "testStrategy": "1. Test each template generation function individually\n2. Verify file structure matches expected output for each feature\n3. Test combinations of features to ensure they integrate correctly\n4. Verify package.json is correctly generated with appropriate dependencies\n5. Test error handling during template generation",
+        "priority": "high",
+        "dependencies": [
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Hygen template generator structure",
+            "description": "Create the Hygen configuration and directory structure for template generation",
+            "dependencies": [],
+            "details": "Install Hygen as a dependency. Create a '_templates' directory at the project root with subdirectories for each template type (base, tailwind, shadcn, auth, database). Set up the Hygen configuration file (.hygen.js) to define custom actions and helpers. Implement the basic template generator structure that will be used by the other template generators.",
+            "status": "done",
+            "testStrategy": "Verify Hygen installation and configuration by running a simple template generation test that creates a basic file."
+          },
+          {
+            "id": 2,
+            "title": "Implement base Next.js app template generation",
+            "description": "Create templates for the base Next.js application structure",
+            "dependencies": [],
+            "details": "Create Hygen templates for the base Next.js app structure in '_templates/base'. Include templates for essential files like next.config.js, tsconfig.json, and the basic directory structure (pages, public, styles). Implement the generateBaseNextApp function to use Hygen for generating these files instead of direct file copying. Update the package.json generation to use a template with dynamic project name insertion.",
+            "status": "done",
+            "testStrategy": "Test by generating a base Next.js app in a temporary directory and verifying all expected files and directories are created with correct content."
+          },
+          {
+            "id": 3,
+            "title": "Implement feature-specific templates (Tailwind and Shadcn)",
+            "description": "Create templates for Tailwind CSS and Shadcn UI integration",
+            "dependencies": [],
+            "details": "Create Hygen templates for Tailwind CSS configuration in '_templates/tailwind', including tailwind.config.js, postcss.config.js, and global CSS files. Create templates for Shadcn UI in '_templates/shadcn', including the components.json configuration and essential UI components. Implement the generateTailwindConfig and generateShadcnUI functions to use these templates. Update the dependency installation logic to add the required packages for each feature.",
+            "status": "done",
+            "testStrategy": "Test by generating projects with Tailwind and Shadcn options enabled, then verify the correct configuration files and dependencies are added."
+          },
+          {
+            "id": 4,
+            "title": "Implement authentication and database templates",
+            "description": "Create templates for different authentication providers and database ORMs",
+            "dependencies": [],
+            "details": "Create Hygen templates for authentication providers (NextAuth, Clerk, Auth.js) in '_templates/auth'. Create templates for database ORMs (Prisma, Drizzle) and database configurations in '_templates/database'. Implement the generateAuthConfig and generateDatabaseConfig functions to use these templates. Include configuration files, API routes, and example implementations for each option. Add logic to install the appropriate dependencies based on selected options.",
+            "status": "done",
+            "testStrategy": "Test by generating projects with different auth and database combinations, then verify the correct files and configurations are created for each combination."
+          },
+          {
+            "id": 5,
+            "title": "Implement environment variable generation and post-install scripts",
+            "description": "Create templates for environment variables and post-installation setup",
+            "dependencies": [],
+            "details": "Create templates for .env, .env.example, and .env.local files based on selected features. Implement the generateEnvFiles function to create these files with appropriate variables for the selected authentication and database options. Add post-installation scripts that run after template generation to install dependencies, initialize git repository, and provide next steps instructions to the user. Update the main generateTemplates function to orchestrate the entire process and handle errors gracefully.",
+            "status": "done",
+            "testStrategy": "Test the complete template generation process with various option combinations. Verify that environment variables are correctly set and post-installation steps complete successfully."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Create Base Next.js App Templates",
+        "description": "Create the base Next.js app templates with App Router structure",
+        "details": "Create the base Next.js app templates in the templates/base directory:\n\n1. Create basic App Router structure:\n   - src/app/layout.tsx\n   - src/app/page.tsx\n   - src/app/globals.css\n\n2. Create configuration files:\n   - next.config.mjs\n   - tsconfig.json\n   - .gitignore\n   - .npmrc\n\n3. Create public directory with favicon\n\nExample layout.tsx:\n```tsx\nexport const metadata = {\n  title: 'OneShip App',\n  description: 'Created with create-oneship-app',\n};\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return (\n    <html lang=\"en\">\n      <body>{children}</body>\n    </html>\n  );\n}\n```\n\nExample page.tsx:\n```tsx\nexport default function Home() {\n  return (\n    <main>\n      <h1>Welcome to your OneShip App</h1>\n      <p>Get started by editing app/page.tsx</p>\n    </main>\n  );\n}\n```\n\nExample next.config.mjs:\n```js\n/** @type {import('next').NextConfig} */\nconst nextConfig = {};\n\nexport default nextConfig;\n```",
+        "testStrategy": "1. Verify all base template files are created correctly\n2. Test the structure with a simple build to ensure it compiles\n3. Validate TypeScript configuration\n4. Check that the App Router structure follows Next.js best practices\n5. Ensure the base templates can be extended with feature-specific templates",
+        "priority": "medium",
+        "dependencies": [
+          6
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create App Router Structure Files",
+            "description": "Create the basic App Router structure files in the templates/base directory including layout, page, and global CSS files.",
+            "dependencies": [],
+            "details": "Create the following files in templates/base/src/app/:\n1. layout.tsx - Implement the root layout component with metadata and basic HTML structure\n2. page.tsx - Create the home page component with welcome message\n3. globals.css - Add basic CSS reset and global styles",
+            "status": "done",
+            "testStrategy": "Verify file structure is correct and files contain the expected content. Test that the layout properly wraps the page component."
+          },
+          {
+            "id": 2,
+            "title": "Create Configuration Files",
+            "description": "Create essential Next.js configuration files in the templates/base directory.",
+            "dependencies": [],
+            "details": "Create the following configuration files in templates/base/:\n1. next.config.mjs - Basic Next.js configuration\n2. tsconfig.json - TypeScript configuration with Next.js recommended settings\n3. .gitignore - Standard Next.js gitignore file\n4. .npmrc - NPM configuration file",
+            "status": "done",
+            "testStrategy": "Validate configuration files against Next.js best practices. Ensure tsconfig.json includes proper paths and compiler options."
+          },
+          {
+            "id": 3,
+            "title": "Create Public Directory with Assets",
+            "description": "Set up the public directory with favicon and other static assets.",
+            "dependencies": [],
+            "details": "Create templates/base/public/ directory and add:\n1. favicon.ico - Default favicon\n2. Create any other necessary static assets that should be included in the base template",
+            "status": "done",
+            "testStrategy": "Verify public directory structure and ensure assets are properly accessible."
+          },
+          {
+            "id": 4,
+            "title": "Implement Package.json and Dependencies",
+            "description": "Create package.json with appropriate Next.js dependencies and scripts.",
+            "dependencies": [],
+            "details": "Create templates/base/package.json with:\n1. Essential dependencies: next, react, react-dom\n2. Dev dependencies: typescript, @types/react, @types/node, eslint\n3. Standard scripts: dev, build, start, lint\n4. Proper metadata fields (name, version, description)",
+            "status": "done",
+            "testStrategy": "Validate package.json structure. Ensure all required dependencies are included with appropriate versions."
+          },
+          {
+            "id": 5,
+            "title": "Create README and Documentation",
+            "description": "Create README.md and documentation files for the base template.",
+            "dependencies": [],
+            "details": "Create templates/base/README.md with:\n1. Project overview and purpose\n2. Getting started instructions\n3. Available scripts explanation\n4. Project structure documentation\n5. Any customization guidance",
+            "status": "done",
+            "testStrategy": "Review documentation for clarity and completeness. Ensure all important aspects of the template are covered."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement Feature-Specific Templates",
+        "description": "Create templates for each feature option (Tailwind, Shadcn, Auth providers, ORMs)",
+        "details": "Create templates for each feature option:\n\n1. **Tailwind CSS:**\n   - tailwind.config.ts\n   - postcss.config.js\n   - Modified globals.css\n\n2. **Shadcn UI:**\n   - components/ui/ directory with basic components\n   - lib/utils.ts for cn utility\n   - Modified tailwind.config.ts\n\n3. **Authentication Providers:**\n   - Next-Auth configuration\n   - Clerk configuration\n   - Supabase Auth configuration\n   - Lucia configuration\n   - features/auth/ directory structure\n\n4. **Database ORMs:**\n   - Drizzle configuration and schema\n   - Prisma configuration and schema\n   - lib/db/ directory structure\n\nExample Tailwind configuration:\n```typescript\n// tailwind.config.ts\nimport type { Config } from 'tailwindcss';\n\nconst config: Config = {\n  content: [\n    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',\n    './src/components/**/*.{js,ts,jsx,tsx,mdx}',\n    './src/app/**/*.{js,ts,jsx,tsx,mdx}',\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n};\n\nexport default config;\n```\n\nExample Auth directory structure:\n```\nfeatures/\n  auth/\n    components/\n      auth-provider.tsx\n    hooks/\n      use-auth.ts\n    lib/\n      auth-config.ts\n```\n\nExample Database directory structure:\n```\nlib/\n  db/\n    schema.ts\n    index.ts\n    client.ts\n```",
+        "testStrategy": "1. Test each feature template individually\n2. Verify file structure matches expected output for each feature\n3. Test combinations of features to ensure they integrate correctly\n4. Verify dependencies are correctly added to package.json\n5. Test that generated code follows best practices for each library/framework",
+        "priority": "medium",
+        "dependencies": [
+          7
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Tailwind CSS Templates",
+            "description": "Implement the Tailwind CSS configuration templates including the main configuration file, PostCSS config, and modified globals.css with base styles.",
+            "dependencies": [],
+            "details": "Create the following files in a templates/tailwind/ directory:\n1. tailwind.config.ts - Include proper content paths, theme extensions, and plugin configurations\n2. postcss.config.js - Set up PostCSS with Tailwind and Autoprefixer\n3. globals.css - Include @tailwind directives and any custom base styles\n\nEnsure the configuration is compatible with Next.js 14 and properly structured for the template system.",
+            "status": "pending",
+            "testStrategy": "Verify the templates by creating a test project with these configurations and confirming that Tailwind styles are properly applied."
+          },
+          {
+            "id": 2,
+            "title": "Implement Shadcn UI Templates",
+            "description": "Create the necessary templates for Shadcn UI integration, including component directory structure, utility functions, and Tailwind configuration modifications.",
+            "dependencies": [
+              1
+            ],
+            "details": "Create the following in templates/shadcn/:\n1. components/ui/ directory with essential components (button, card, dialog, etc.)\n2. lib/utils.ts with the cn utility function for merging class names\n3. Modified tailwind.config.ts that includes Shadcn's required plugins (animation, forms, typography)\n4. Add a components.json configuration file\n\nEnsure all components follow the Shadcn component structure and are properly typed.",
+            "status": "pending",
+            "testStrategy": "Test the components in a sample project to verify they render correctly and that the styling is properly applied."
+          },
+          {
+            "id": 3,
+            "title": "Develop Authentication Provider Templates",
+            "description": "Create template configurations and directory structures for each supported authentication provider: Next-Auth, Clerk, Supabase Auth, and Lucia.",
+            "dependencies": [],
+            "details": "For each auth provider (templates/auth/), create:\n1. Next-Auth: auth.ts configuration, API routes, session providers\n2. Clerk: ClerkProvider setup, middleware.ts, environment variables template\n3. Supabase Auth: Client setup, auth helpers, login/signup components\n4. Lucia: Auth configuration, session management, middleware\n\nEach provider should have a consistent directory structure with components/, hooks/, and lib/ subdirectories as shown in the example.",
+            "status": "pending",
+            "testStrategy": "Create test implementations for each auth provider to verify the authentication flow works correctly."
+          },
+          {
+            "id": 4,
+            "title": "Create Database ORM Templates",
+            "description": "Implement template configurations and schema structures for supported ORMs: Drizzle and Prisma.",
+            "dependencies": [],
+            "details": "Create the following in templates/orm/:\n1. Drizzle:\n   - drizzle.config.ts with configuration options\n   - lib/db/schema.ts with example models\n   - lib/db/index.ts for exports\n   - lib/db/client.ts for database connection\n\n2. Prisma:\n   - prisma/schema.prisma with example models\n   - lib/db/prisma.ts for client instantiation\n   - lib/db/index.ts for exports\n\nInclude example models for users, posts, or other common entities with proper relations.",
+            "status": "pending",
+            "testStrategy": "Test each ORM configuration by setting up a test database and verifying that models can be created, queried, and related."
+          },
+          {
+            "id": 5,
+            "title": "Create Template Integration System",
+            "description": "Develop a system to integrate the various templates into the project based on user selections, ensuring compatibility between different feature choices.",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "details": "Implement a template integration system that:\n1. Creates a mapping between user selections and template files\n2. Handles dependencies between features (e.g., Shadcn requires Tailwind)\n3. Resolves conflicts between different template options\n4. Provides a consistent file structure regardless of selected options\n5. Includes a template.json file for each feature describing its files and dependencies\n\nThe system should be able to merge configurations when multiple selected features modify the same files (e.g., tailwind.config.ts).",
+            "status": "pending",
+            "testStrategy": "Test various combinations of feature selections to ensure all templates are correctly integrated without conflicts."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Implement Environment Variable Generation",
+        "description": "Create functionality to generate appropriate .env and .env.example files based on selected options",
+        "details": "Implement environment variable generation:\n\n```typescript\n// src/utils/env.ts\nimport path from 'path';\nimport fs from 'fs-extra';\n\ninterface ProjectOptions {\n  auth?: string;\n  orm?: string;\n  db?: string;\n}\n\nexport async function generateEnvFiles(projectDir: string, options: ProjectOptions) {\n  const envVars: Record<string, string> = {\n    // Base environment variables\n    NODE_ENV: 'development',\n  };\n  \n  const envExampleVars: Record<string, string> = {\n    NODE_ENV: 'development',\n  };\n  \n  // Add auth-specific environment variables\n  if (options.auth === 'next-auth') {\n    envVars.NEXTAUTH_SECRET = 'your-nextauth-secret';\n    envVars.NEXTAUTH_URL = 'http://localhost:3000';\n    \n    envExampleVars.NEXTAUTH_SECRET = 'your-nextauth-secret';\n    envExampleVars.NEXTAUTH_URL = 'http://localhost:3000';\n    // Add provider-specific variables\n    envExampleVars.GITHUB_ID = 'your-github-id';\n    envExampleVars.GITHUB_SECRET = 'your-github-secret';\n  } else if (options.auth === 'clerk') {\n    envExampleVars.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY = 'your-publishable-key';\n    envExampleVars.CLERK_SECRET_KEY = 'your-secret-key';\n  } else if (options.auth === 'supabase-auth') {\n    envExampleVars.NEXT_PUBLIC_SUPABASE_URL = 'your-supabase-url';\n    envExampleVars.NEXT_PUBLIC_SUPABASE_ANON_KEY = 'your-supabase-anon-key';\n  } else if (options.auth === 'lucia') {\n    envExampleVars.AUTH_SECRET = 'your-auth-secret';\n  }\n  \n  // Add database-specific environment variables\n  if (options.orm === 'drizzle' || options.orm === 'prisma') {\n    if (options.db === 'postgres') {\n      envExampleVars.DATABASE_URL = 'postgresql://user:password@localhost:5432/db';\n    } else if (options.db === 'mysql') {\n      envExampleVars.DATABASE_URL = 'mysql://user:password@localhost:3306/db';\n    } else if (options.db === 'sqlite') {\n      envExampleVars.DATABASE_URL = 'file:./dev.db';\n    }\n  }\n  \n  // Write .env file\n  const envContent = Object.entries(envVars)\n    .map(([key, value]) => `${key}=${value}`)\n    .join('\\n');\n  \n  await fs.writeFile(path.join(projectDir, '.env'), envContent);\n  \n  // Write .env.example file\n  const envExampleContent = Object.entries(envExampleVars)\n    .map(([key, value]) => `${key}=${value}`)\n    .join('\\n');\n  \n  await fs.writeFile(path.join(projectDir, '.env.example'), envExampleContent);\n}\n```",
+        "testStrategy": "1. Test environment variable generation for each authentication provider\n2. Test environment variable generation for each database type\n3. Verify .env and .env.example files are created correctly\n4. Test combinations of auth and database options\n5. Ensure sensitive values are not included in .env.example",
+        "priority": "medium",
+        "dependencies": [
+          8
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Base Environment Variable Generation",
+            "description": "Create the core functionality to generate basic environment variables that are common across all project configurations.",
+            "dependencies": [],
+            "details": "Create the generateEnvFiles function skeleton and implement the base environment variable generation. This includes setting up the NODE_ENV variable and creating the basic structure for both .env and .env.example files. Ensure the function accepts projectDir and options parameters and properly initializes the envVars and envExampleVars objects.",
+            "status": "pending",
+            "testStrategy": "Test that the function creates both .env and .env.example files with the correct base variables when called with minimal options."
+          },
+          {
+            "id": 2,
+            "title": "Add Authentication-Specific Environment Variables",
+            "description": "Extend the environment variable generation to include authentication-specific variables based on the selected auth provider.",
+            "dependencies": [],
+            "details": "Implement the conditional logic for different auth providers (next-auth, clerk, supabase-auth, lucia). For each provider, add the appropriate environment variables to both the envVars and envExampleVars objects. Ensure that sensitive values in the .env file use placeholder values and that .env.example includes all necessary variables with descriptive placeholder values.",
+            "status": "pending",
+            "testStrategy": "Test the function with each auth option to verify that the correct auth-specific variables are added to both files."
+          },
+          {
+            "id": 3,
+            "title": "Add Database-Specific Environment Variables",
+            "description": "Implement the generation of database connection string environment variables based on the selected ORM and database type.",
+            "dependencies": [],
+            "details": "Add conditional logic to handle different database configurations. When Drizzle or Prisma is selected as the ORM, generate the appropriate DATABASE_URL format based on the selected database type (postgres, mysql, sqlite). Ensure the connection strings follow the standard format for each database type.",
+            "status": "pending",
+            "testStrategy": "Test with different combinations of ORM and database options to verify that the correct DATABASE_URL format is generated."
+          },
+          {
+            "id": 4,
+            "title": "Implement File Writing Functionality",
+            "description": "Finalize the file writing logic to create the .env and .env.example files in the specified project directory.",
+            "dependencies": [],
+            "details": "Implement the logic to convert the environment variable objects into properly formatted strings and write them to the appropriate files. Use fs-extra to handle file operations asynchronously. Ensure proper error handling for file system operations and create any necessary directories if they don't exist.",
+            "status": "pending",
+            "testStrategy": "Test that files are correctly written to the specified directory with proper formatting and content. Include tests for error cases such as permission issues or invalid paths."
+          },
+          {
+            "id": 5,
+            "title": "Add Support for Custom Environment Variables",
+            "description": "Extend the function to allow for custom environment variables to be added based on other project options or user input.",
+            "dependencies": [],
+            "details": "Modify the generateEnvFiles function to accept an optional customVars parameter that allows additional environment variables to be specified. Implement logic to merge these custom variables with the automatically generated ones. This will make the function more flexible for future extensions without requiring code changes.",
+            "status": "pending",
+            "testStrategy": "Test that custom variables are correctly merged with auto-generated variables and that they take precedence in case of conflicts."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Implement Post-Generation Steps and Success Output",
+        "description": "Create functionality for post-generation steps (npm install, git init) and success message display",
+        "details": "Implement post-generation steps and success output:\n\n```typescript\n// src/utils/post-generation.ts\nimport { execa } from 'execa';\nimport chalk from 'chalk';\n\ninterface ProjectOptions {\n  tailwind?: boolean;\n  shadcn?: boolean;\n  auth?: string;\n  orm?: string;\n  db?: string;\n}\n\nexport async function runPostGenerationSteps(projectDir: string, projectName: string, options: ProjectOptions) {\n  // Install dependencies\n  console.log('\\nInstalling dependencies...');\n  try {\n    await execa('npm', ['install'], { cwd: projectDir, stdio: 'inherit' });\n  } catch (error) {\n    console.error('Failed to install dependencies:', error);\n    console.log('You can try installing them manually by running `npm install` in the project directory.');\n  }\n  \n  // Initialize git repository\n  console.log('\\nInitializing git repository...');\n  try {\n    await execa('git', ['init'], { cwd: projectDir });\n    await execa('git', ['add', '.'], { cwd: projectDir });\n    await execa('git', ['commit', '-m', 'Initial commit from create-oneship-app'], { cwd: projectDir });\n  } catch (error) {\n    console.error('Failed to initialize git repository:', error);\n    console.log('You can initialize it manually by running `git init` in the project directory.');\n  }\n  \n  // Display success message\n  displaySuccessMessage(projectName, projectDir, options);\n}\n\nfunction displaySuccessMessage(projectName: string, projectDir: string, options: ProjectOptions) {\n  console.log('\\n' + chalk.green('🚀 Success!') + ' Created ' + chalk.bold(projectName) + ' at ' + projectDir);\n  \n  // Display stack summary\n  console.log('\\n' + chalk.bold('Your project was set up with:'));\n  console.log('- Next.js with App Router');\n  if (options.tailwind) console.log('- Tailwind CSS');\n  if (options.shadcn) console.log('- Shadcn UI');\n  if (options.auth && options.auth !== 'none') console.log(`- ${options.auth} authentication`);\n  if (options.orm && options.orm !== 'none') console.log(`- ${options.orm} ORM with ${options.db}`);\n  \n  // Display next steps\n  console.log('\\n' + chalk.bold('Next steps:'));\n  console.log('  cd ' + projectName);\n  console.log('  npm run dev');\n  \n  // Display additional setup instructions if needed\n  if (options.auth && options.auth !== 'none' || options.orm && options.orm !== 'none') {\n    console.log('\\n' + chalk.bold('Additional setup:'));\n    console.log('  1. Check .env.example for required environment variables');\n    console.log('  2. Set up your environment variables in .env');\n  }\n  \n  console.log('\\n' + chalk.bold('Happy hacking! 🚀'));\n}\n```",
+        "testStrategy": "1. Test npm install process with mocked execa\n2. Test git initialization with mocked execa\n3. Verify error handling when commands fail\n4. Test success message output for various option combinations\n5. Verify that the correct next steps are displayed based on selected options",
+        "priority": "low",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement dependency installation function",
+            "description": "Create a function to handle npm dependency installation in the generated project directory",
+            "dependencies": [],
+            "details": "Extract the dependency installation logic from runPostGenerationSteps into a separate async function called installDependencies that takes projectDir as a parameter. The function should use execa to run 'npm install' in the project directory, handle errors appropriately, and provide user feedback during the process. Return a boolean indicating success or failure.",
+            "status": "pending",
+            "testStrategy": "Create a mock for execa and test both successful and failed installation scenarios."
+          },
+          {
+            "id": 2,
+            "title": "Implement Git repository initialization function",
+            "description": "Create a function to initialize a Git repository in the generated project",
+            "dependencies": [],
+            "details": "Extract the Git initialization logic from runPostGenerationSteps into a separate async function called initializeGitRepository that takes projectDir as a parameter. The function should initialize a Git repository, add all files, and create an initial commit. Handle errors appropriately and provide user feedback. Return a boolean indicating success or failure.",
+            "status": "pending",
+            "testStrategy": "Create a mock for execa and test both successful and failed Git initialization scenarios."
+          },
+          {
+            "id": 3,
+            "title": "Enhance success message display function",
+            "description": "Improve the displaySuccessMessage function to show more detailed information about the project setup",
+            "dependencies": [],
+            "details": "Enhance the displaySuccessMessage function to include more detailed information about the project configuration. Add conditional sections for different features (Tailwind, Shadcn UI, authentication, ORM, database). Use chalk for better formatting and visual hierarchy. Consider adding links to documentation for the selected technologies.",
+            "status": "pending",
+            "testStrategy": "Create snapshot tests to verify the output format for different combinations of options."
+          },
+          {
+            "id": 4,
+            "title": "Implement runPostGenerationSteps orchestrator function",
+            "description": "Refactor the main runPostGenerationSteps function to use the new modular functions",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "Refactor runPostGenerationSteps to use the newly created installDependencies and initializeGitRepository functions. Ensure proper sequencing of operations and error handling. The function should continue with subsequent steps even if a previous step fails, but should track and report any issues that occurred during the process.",
+            "status": "pending",
+            "testStrategy": "Test the orchestration logic with different combinations of successful and failed sub-operations."
+          },
+          {
+            "id": 5,
+            "title": "Integrate post-generation module with CLI",
+            "description": "Connect the post-generation functionality with the main CLI flow",
+            "dependencies": [
+              4
+            ],
+            "details": "Import and use the runPostGenerationSteps function in the main CLI flow. Call it after the project generation is complete, passing the appropriate parameters (projectDir, projectName, and options). Ensure that the CLI properly handles any errors that might occur during post-generation steps and exits with an appropriate status code.",
+            "status": "pending",
+            "testStrategy": "Create integration tests that verify the entire flow from CLI invocation to post-generation steps completion."
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-06-17T05:28:06.019Z",
+      "updated": "2025-06-18T01:39:23.628Z",
+      "description": "Tasks for master context"
+    }
+  }
+}
