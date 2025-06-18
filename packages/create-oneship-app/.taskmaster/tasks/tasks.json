@@ -439,7 +439,7 @@
             "description": "Implement the Tailwind CSS configuration templates including the main configuration file, PostCSS config, and modified globals.css with base styles.",
             "dependencies": [],
             "details": "Create the following files in a templates/tailwind/ directory:\n1. tailwind.config.ts - Include proper content paths, theme extensions, and plugin configurations\n2. postcss.config.js - Set up PostCSS with Tailwind and Autoprefixer\n3. globals.css - Include @tailwind directives and any custom base styles\n\nEnsure the configuration is compatible with Next.js 14 and properly structured for the template system.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the templates by creating a test project with these configurations and confirming that Tailwind styles are properly applied."
           },
           {
@@ -450,7 +450,7 @@
               1
             ],
             "details": "Create the following in templates/shadcn/:\n1. components/ui/ directory with essential components (button, card, dialog, etc.)\n2. lib/utils.ts with the cn utility function for merging class names\n3. Modified tailwind.config.ts that includes Shadcn's required plugins (animation, forms, typography)\n4. Add a components.json configuration file\n\nEnsure all components follow the Shadcn component structure and are properly typed.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test the components in a sample project to verify they render correctly and that the styling is properly applied."
           },
           {
@@ -614,7 +614,7 @@
     ],
     "metadata": {
       "created": "2025-06-17T05:28:06.019Z",
-      "updated": "2025-06-18T01:39:23.628Z",
+      "updated": "2025-06-18T06:15:17.838Z",
       "description": "Tasks for master context"
     }
   }

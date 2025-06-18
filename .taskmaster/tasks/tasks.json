@@ -50,7 +50,7 @@
               3
             ],
             "details": "1. Create packages/create-oneship-app/ directory with its own package.json\n2. Configure package.json with bin entry for CLI execution\n3. Set up TypeScript configuration\n4. Create basic CLI structure with commander or similar\n5. Implement skeleton for project initialization logic\n6. Configure build process to produce executable package",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test the package locally by linking it (`pnpm link`) and verifying it can be executed as a command-line tool."
           },
           {
@@ -61,7 +61,7 @@
               4
             ],
             "details": "1. Create packages/templates/ directory with its own package.json\n2. Create initial template structure for basic project\n3. Set up file organization for different template types\n4. Implement template loading mechanism in core package\n5. Connect create-oneship-app to use templates package\n6. Add documentation for template structure and usage",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test the integration by using create-oneship-app to generate a project from a template and verify the output matches expectations."
           }
         ]
@@ -192,7 +192,7 @@
     ],
     "metadata": {
       "created": "2025-06-15T19:14:07.600Z",
-      "updated": "2025-06-15T20:09:05.086Z",
+      "updated": "2025-06-15T23:02:48.935Z",
       "description": "Tasks for master context"
     }
   }

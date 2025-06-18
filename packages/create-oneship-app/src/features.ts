@@ -47,3 +47,11 @@ export async function installNextAuth(projectName: string) {
   console.log("Adding NextAuth.js...")
   await runHygen(["feature", "use-next-auth", "--name", projectName])
 }
+
+export async function installClerk(projectName: string, projectDir: string) {
+  console.log("Adding Clerk...")
+  await runHygen(["feature", "use-clerk", "--name", projectName])
+
+  // add clerk dependencies
+  await runPnpm(["add", "@clerk/nextjs"], projectDir)
+}

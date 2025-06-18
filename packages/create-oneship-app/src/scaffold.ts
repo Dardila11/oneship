@@ -1,4 +1,5 @@
 import {
+  installClerk,
   installDrizzle,
   installNextAuth,
   installShadcn,
@@ -25,6 +26,10 @@ export async function scaffoldProject(
 
   if (options.orm === "drizzle") {
     await installDrizzle(projectName, projectDir)
+  }
+
+  if (options.authProvider === "clerk") {
+    await installClerk(projectName, projectDir)
   }
 
   if (options.drizzle) {
