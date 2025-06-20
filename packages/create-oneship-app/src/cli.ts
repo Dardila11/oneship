@@ -13,7 +13,13 @@ interface CLIOptions {
   tailwind?: boolean
   drizzle?: boolean
   shadcn?: boolean
-  authProvider?: "clerk" | "next-auth" | "supabase-auth" | "lucia" | "none"
+  authProvider?:
+    | "clerk"
+    | "next-auth"
+    | "supabase-auth"
+    | "lucia"
+    | "better-auth"
+    | "none"
   orm?: "drizzle" | "prisma" | "none"
   db?: "postgres" | "mysql" | "sqlite" | "none"
 }
@@ -56,7 +62,6 @@ export async function handleNewProject(options: CLIOptions) {
   // which is true if no options are passed from the CLI.
   if (isInteractive) {
     featureOptions = await promptForFeatures()
-    console.log(featureOptions)
   } else {
     // If the process is not interactive,
     // use the options passed from the CLI.

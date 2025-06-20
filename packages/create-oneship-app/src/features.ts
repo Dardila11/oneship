@@ -1,4 +1,5 @@
-import { runHygen, runPnpm } from "./utils"
+import { FeatureOptions } from "./prompts"
+import { runHygenSilent, runPnpmNoLogs } from "./utils"
 
 async function getExeca() {
   const { execa } = await import("execa")
@@ -7,9 +8,9 @@ async function getExeca() {
 
 export async function installTailwind(projectName: string, projectDir: string) {
   console.log("Adding Tailwind CSS...")
-  await runHygen(["feature", "use-tailwind", "--name", projectName])
+  await runHygenSilent(["feature", "use-tailwind", "--name", projectName])
   console.log("Adding Tailwind CSS dependencies...")
-  await runPnpm(
+  await runPnpmNoLogs(
     ["add", "-D", "tailwindcss", "postcss", "@tailwindcss/postcss"],
     projectDir
   )
@@ -23,11 +24,11 @@ export async function installDrizzle(projectName: string, projectDir: string) {
   await execa("mkdir", ["-p", "src/lib/db"], { cwd: projectDir })
 
   console.log("Adding Drizzle ORM...")
-  await runHygen(["feature", "use-drizzle", "--name", projectName])
+  await runHygenSilent(["feature", "use-drizzle", "--name", projectName])
   console.log("Adding Drizzle dependencies...")
-  await runPnpm(["add", "drizzle-orm", "pg"], projectDir)
+  await runPnpmNoLogs(["add", "drizzle-orm", "pg"], projectDir)
   console.log("Adding Drizzle dev dependencies...")
-  await runPnpm(
+  await runPnpmNoLogs(
     ["add", "-D", "drizzle-kit", "tsx", "@types/pg", "dotenv"],
     projectDir
   )
@@ -45,13 +46,32 @@ export async function installShadcn(projectDir: string) {
 
 export async function installNextAuth(projectName: string) {
   console.log("Adding NextAuth.js...")
-  await runHygen(["feature", "use-next-auth", "--name", projectName])
+  await runHygenSilent(["feature", "use-next-auth", "--name", projectName])
 }
 
 export async function installClerk(projectName: string, projectDir: string) {
   console.log("Adding Clerk...")
-  await runHygen(["feature", "use-clerk", "--name", projectName])
+  await runHygenSilent(["feature", "use-clerk", "--name", projectName])
 
   // add clerk dependencies
-  await runPnpm(["add", "@clerk/nextjs"], projectDir)
+  await runPnpmNoLogs(["add", "@clerk/nextjs"], projectDir)
+}
+
+export async function installBetterAuth(
+  projectName: string,
+  projectDir: string,
+  options: FeatureOptions
+) {
+  console.log("Adding BetterAuth...")
+  await runHygenSilent([
+    "feature",
+    "use-better-auth",
+    "--name",
+    projectName,
+    "--db",
+    options.db,
+  ])
+
+  // add better-auth dependencies
+  await runPnpmNoLogs(["add", "better-auth"], projectDir)
 }

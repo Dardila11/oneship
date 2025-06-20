@@ -1,7 +1,7 @@
 import fs from "fs-extra"
 import path from "path"
 import prompts from "prompts"
-import { runHygen } from "./utils"
+import { runHygenSilent } from "./utils"
 
 export async function createProjectDirectory(
   projectName: string
@@ -29,5 +29,5 @@ export async function createProjectDirectory(
 
 export async function generateBaseProject(projectName: string) {
   console.log("Creating a new OneShip project...")
-  await runHygen(["project", "new", "--name", projectName])
+  await runHygenSilent(["project", "new", "--name", projectName])
 }

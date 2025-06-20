@@ -4,7 +4,13 @@ export interface FeatureOptions {
   tailwind: boolean
   drizzle: boolean
   shadcn: boolean
-  authProvider: "clerk" | "next-auth" | "supabase-auth" | "lucia" | "none"
+  authProvider:
+    | "clerk"
+    | "next-auth"
+    | "supabase-auth"
+    | "lucia"
+    | "better-auth"
+    | "none"
   orm: "drizzle" | "prisma" | "none"
   db: "postgres" | "mysql" | "sqlite" | "none"
 }
@@ -37,7 +43,7 @@ export async function promptForFeatures(): Promise<FeatureOptions> {
       {
         type: "confirm",
         name: "tailwind",
-        message: "Would you like to use Tailwind CSS for styling?",
+        message: "Use Tailwind CSS for styling? (recommended)",
         initial: true,
       },
       {
@@ -48,7 +54,8 @@ export async function promptForFeatures(): Promise<FeatureOptions> {
           { title: "Next-Auth", value: "next-auth" },
           { title: "Clerk", value: "clerk" },
           { title: "Supabase Auth", value: "supabase-auth" },
-          { title: "Lucia", value: "lucia" },
+          { title: "Lucia (in development)", value: "lucia" },
+          { title: "BetterAuth", value: "better-auth" },
           { title: "None", value: "none" },
         ],
       },

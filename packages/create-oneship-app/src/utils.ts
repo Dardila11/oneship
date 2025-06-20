@@ -27,6 +27,12 @@ export function getRunnerConfig() {
   }
 }
 
+export async function runHygenSilent(args: string[]) {
+  const config = getRunnerConfig()
+  config.logger = new Logger(() => {}) // Silent logger
+  return runner(args, config)
+}
+
 export async function runHygen(args: string[]) {
   return runner(args, getRunnerConfig())
 }
@@ -34,4 +40,14 @@ export async function runHygen(args: string[]) {
 export async function runPnpm(args: string[], cwd: string) {
   const execa = await getExeca()
   return execa("pnpm", args, { cwd, stdio: "inherit" })
+}
+
+export async function runPnpmNoLogs(args: string[], cwd: string) {
+  const execa = await getExeca()
+  return execa("pnpm", args, { cwd, stdio: "ignore" })
+}
+
+export async function runPnpmSilent(args: string[], cwd: string) {
+  const execa = await getExeca()
+  return execa("pnpm", args, { cwd })
 }

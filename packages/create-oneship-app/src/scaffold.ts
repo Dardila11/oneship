@@ -1,4 +1,5 @@
 import {
+  installBetterAuth,
   installClerk,
   installDrizzle,
   installNextAuth,
@@ -19,7 +20,6 @@ export async function scaffoldProject(
   projectDir: string
 ) {
   console.log("Scaffolding project...")
-  console.log(options)
   if (options.tailwind) {
     await installTailwind(projectName, projectDir)
   }
@@ -32,6 +32,14 @@ export async function scaffoldProject(
     await installClerk(projectName, projectDir)
   }
 
+  if (options.authProvider === "next-auth") {
+    await installNextAuth(projectName)
+  }
+
+  if (options.authProvider === "better-auth") {
+    await installBetterAuth(projectName, projectDir, options)
+  }
+
   if (options.drizzle) {
     await installDrizzle(projectName, projectDir)
   }
@@ -40,15 +48,11 @@ export async function scaffoldProject(
     await installShadcn(projectDir)
   }
 
-  if (options.authProvider === "next-auth") {
-    await installNextAuth(projectName)
-  }
-
-  console.log("\\nInstalling dependencies...")
+  console.log("Installing dependencies...")
   await runPnpm(["install"], projectDir)
 
   const execa = await getExeca()
-  console.log("\\nInitializing git repository...")
+  console.log("Initializing git repository...")
   await execa("git", ["init"], { cwd: projectDir })
   await execa("git", ["add", "."], { cwd: projectDir })
   await execa(
@@ -59,7 +63,7 @@ export async function scaffoldProject(
     }
   )
 
-  console.log(`\\nSuccess! Created ${projectName} at ${projectDir}\\n`)
+  console.log(`nSuccess! Created ${projectName} at ${projectDir}\\n`)
   console.log("Next steps:")
   console.log(`  cd ${projectName}`)
   console.log("  pnpm dev")
