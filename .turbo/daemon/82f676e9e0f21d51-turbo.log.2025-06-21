@@ -1,0 +1,145 @@
+2025-06-21T06:15:27.101694Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie")}
+2025-06-21T06:15:27.101708Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:15:27.202441Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/3.cookie"), AnchoredSystemPathBuf(".turbo/cookies/2.cookie"), AnchoredSystemPathBuf(".turbo/cookies/1.cookie")}
+2025-06-21T06:15:27.202452Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:15:28.501567Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/4.cookie")}
+2025-06-21T06:15:28.501578Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:15:28.601898Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/6.cookie"), AnchoredSystemPathBuf(".turbo/cookies/5.cookie")}
+2025-06-21T06:15:28.601907Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:15:29.501024Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/7.cookie")}
+2025-06-21T06:15:29.501038Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:17:21.302665Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:17:21.302694Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:17:52.801782Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/package.json")}
+2025-06-21T06:17:52.801791Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:18:05.701197Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/tsconfig.json")}
+2025-06-21T06:18:05.701208Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:18:05.727367Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:18:08.701375Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/utils/errors.ts")}
+2025-06-21T06:18:08.701385Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-21T06:18:49.402907Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/utils/__tests__/errors.test.ts")}
+2025-06-21T06:18:49.402944Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-21T06:19:50.201622Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/index.ts")}
+2025-06-21T06:19:50.201637Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:19:50.201653Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:22:43.502318Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:22:43.502353Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:24:24.501987Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands")}
+2025-06-21T06:24:24.502015Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:24:24.502029Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:24:32.401418Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/add.ts")}
+2025-06-21T06:24:32.401428Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:24:33.802130Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/add.ts")}
+2025-06-21T06:24:33.802139Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:24:43.202248Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/index.ts")}
+2025-06-21T06:24:43.202271Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:25:15.902121Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/.turbo"), AnchoredSystemPathBuf(".turbo/cookies/10.cookie"), AnchoredSystemPathBuf("packages/create-oneship-app/dist"), AnchoredSystemPathBuf(".turbo/cookies/8.cookie"), AnchoredSystemPathBuf(".turbo/cookies/9.cookie")}
+2025-06-21T06:25:15.902138Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }, WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-21T06:25:16.002473Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/dist"), AnchoredSystemPathBuf(".turbo/cookies/11.cookie")}
+2025-06-21T06:25:16.002484Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }, WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-21T06:25:16.002517Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:25:17.001844Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/12.cookie"), AnchoredSystemPathBuf(".turbo/cookies/13.cookie")}
+2025-06-21T06:25:17.001854Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:25:17.801808Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/14.cookie")}
+2025-06-21T06:25:17.801819Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:25:38.401689Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/add.ts")}
+2025-06-21T06:25:38.401702Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:25:38.401711Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:25:45.802403Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/index.ts")}
+2025-06-21T06:25:45.802413Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:25:45.802424Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:27:32.601394Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:27:32.601423Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:29:14.502012Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:29:14.502057Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:29:19.201634Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/auth.ts")}
+2025-06-21T06:29:19.201644Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:29:20.501802Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/auth.ts")}
+2025-06-21T06:29:20.501813Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:29:28.702583Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/db.ts")}
+2025-06-21T06:29:28.702593Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:29:30.001840Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/db.ts")}
+2025-06-21T06:29:30.001851Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:29:36.501960Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/add.ts")}
+2025-06-21T06:29:36.501969Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:30:15.501458Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/15.cookie")}
+2025-06-21T06:30:15.501476Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:30:15.601877Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/.turbo"), AnchoredSystemPathBuf("packages/core/dist"), AnchoredSystemPathBuf(".turbo/cookies/18.cookie"), AnchoredSystemPathBuf(".turbo/cookies/16.cookie"), AnchoredSystemPathBuf(".turbo/cookies/19.cookie"), AnchoredSystemPathBuf(".turbo/cookies/17.cookie")}
+2025-06-21T06:30:15.601887Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:30:15.633002Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:30:16.602595Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/20.cookie")}
+2025-06-21T06:30:16.602604Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:35:12.401555Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:35:12.401593Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:36:55.702283Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:36:55.702298Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:37:00.301838Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/env.ts")}
+2025-06-21T06:37:00.301858Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:37:01.801179Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/env.ts")}
+2025-06-21T06:37:01.801189Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:37:07.701509Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/custom.ts")}
+2025-06-21T06:37:07.701523Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:37:09.008625Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/custom.ts")}
+2025-06-21T06:37:09.008636Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:37:16.001825Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/add.ts")}
+2025-06-21T06:37:16.001838Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:37:29.801671Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/21.cookie")}
+2025-06-21T06:37:29.801680Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:37:29.901624Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/23.cookie"), AnchoredSystemPathBuf(".turbo/cookies/22.cookie"), AnchoredSystemPathBuf(".turbo/cookies/24.cookie")}
+2025-06-21T06:37:29.901635Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:37:30.701385Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/25.cookie")}
+2025-06-21T06:37:30.701395Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:38:46.401568Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/add.ts")}
+2025-06-21T06:38:46.401603Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:38:46.430191Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:38:50.201975Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/db.ts")}
+2025-06-21T06:38:50.201985Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:38:50.201998Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:38:53.002607Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/auth.ts")}
+2025-06-21T06:38:53.002618Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:38:53.040930Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:38:57.303291Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/custom.ts")}
+2025-06-21T06:38:57.303303Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:38:57.332146Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:39:03.601230Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/env.ts")}
+2025-06-21T06:39:03.601241Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:39:03.657926Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:39:05.002365Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:39:05.002375Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:40:27.302889Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:40:27.302924Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:41:21.100928Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils")}
+2025-06-21T06:41:21.100939Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:41:21.154018Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:41:28.601823Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/project.ts")}
+2025-06-21T06:41:28.601842Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:41:30.202642Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/project.ts")}
+2025-06-21T06:41:30.202656Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:41:35.902612Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/errors.ts")}
+2025-06-21T06:41:35.902625Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:41:37.201445Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/errors.ts")}
+2025-06-21T06:41:37.201456Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:41:43.201651Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/errors.ts")}
+2025-06-21T06:41:43.201663Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:42:07.102411Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/26.cookie")}
+2025-06-21T06:42:07.102420Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:42:07.202710Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/29.cookie"), AnchoredSystemPathBuf(".turbo/cookies/27.cookie"), AnchoredSystemPathBuf(".turbo/cookies/28.cookie")}
+2025-06-21T06:42:07.202722Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:42:08.102215Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/30.cookie")}
+2025-06-21T06:42:08.102231Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:43:12.701919Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/project.ts")}
+2025-06-21T06:43:12.701938Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:43:12.730584Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:43:16.202151Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/utils/errors.ts")}
+2025-06-21T06:43:16.202166Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-21T06:43:16.202180Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-21T06:44:07.201643Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:44:07.201673Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:45:26.702281Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:45:26.702315Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:45:37.602744Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:45:37.602756Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:47:37.802730Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:47:37.802765Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-21T06:47:49.901179Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".taskmaster/tasks/tasks.json")}
+2025-06-21T06:47:49.901192Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))

@@ -9,7 +9,7 @@
         "testStrategy": "Verify the monorepo structure is correctly set up by running `pnpm install` and ensuring all packages can be built with `pnpm build`. Test workspace dependencies by importing a module from one package into another.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -142,7 +142,7 @@
         "dependencies": [
           2
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -150,7 +150,7 @@
             "description": "Initialize the CLI package with necessary dependencies and create the main entry point file that will serve as the command router using Commander.js.",
             "dependencies": [],
             "details": "1. Create the package directory structure with src/ folder\n2. Initialize package.json with pnpm init\n3. Install required dependencies (commander, prompts, fs-extra, execa)\n4. Install dev dependencies (typescript, @types/node, @types/fs-extra)\n5. Create tsconfig.json with appropriate settings\n6. Implement the main src/index.ts file with Commander.js setup\n7. Configure package.json with bin entry pointing to the compiled index.js\n8. Set up build script using tsc",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify the CLI can be executed and displays help information correctly"
           },
           {
@@ -159,7 +159,7 @@
             "description": "Create the base structure for the 'add' command and its subcommand registration system.",
             "dependencies": [],
             "details": "1. Create src/commands/add.ts file\n2. Implement the registerAddCommand function that takes a Commander instance\n3. Set up the base 'add' command\n4. Create placeholder subcommands for auth, db, env, and feature\n5. Implement the command registration pattern\n6. Import and register the add command in the main index.ts file\n7. Set up the basic action handlers with prompts for options",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test that 'add' command and subcommands appear in help output and can be invoked without errors"
           },
           {
@@ -168,7 +168,7 @@
             "description": "Create the feature modules for authentication and database integration that will be used by the 'add auth' and 'add db' commands.",
             "dependencies": [],
             "details": "1. Create src/features/auth.ts and src/features/database.ts\n2. Implement addAuth function with support for different providers (clerk, next-auth, supabase)\n3. Implement addDatabase function with support for different databases (postgres, mysql, mongodb)\n4. Create templates for configuration files that will be added to user projects\n5. Implement provider-specific logic for each auth option\n6. Implement database-specific logic for each database option\n7. Add validation for project compatibility",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Create mock project structures and verify that auth and database features can be correctly added"
           },
           {
@@ -177,7 +177,7 @@
             "description": "Create the feature modules for environment variables and custom feature templates that will be used by the 'add env' and 'add feature' commands.",
             "dependencies": [],
             "details": "1. Create src/features/env.ts and src/features/feature.ts\n2. Implement addEnv function for setting up environment variables\n3. Implement addFeature function for adding custom features\n4. Create templates for .env files and related configuration\n5. Set up a system for managing custom feature templates\n6. Implement file modification utilities for updating existing files\n7. Add support for different project structures",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test adding environment variables to different project types and verify custom feature template application"
           },
           {
@@ -186,7 +186,7 @@
             "description": "Create utility functions for project detection, validation, and implement robust error handling throughout the CLI.",
             "dependencies": [],
             "details": "1. Create src/utils/project.ts for project-related utilities\n2. Implement functions to detect project type (Next.js, React, etc.)\n3. Create src/utils/errors.ts for standardized error handling\n4. Implement validation functions to check if commands can be executed in current project\n5. Add colorful console output for errors and success messages\n6. Implement logging utilities\n7. Add graceful error handling for all commands\n8. Create a final integration test script that verifies all commands",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test error scenarios like invalid project structures, missing dependencies, and verify helpful error messages are displayed"
           }
         ]
@@ -202,7 +202,66 @@
           2
         ],
         "status": "pending",
-        "subtasks": []
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement base Next.js app templates",
+            "description": "Create base templates for Next.js app router and pages router projects",
+            "dependencies": [],
+            "details": "Develop the base Next.js app templates for both app router and pages router, including the folder structure, essential files, and basic configurations. Ensure the templates include placeholders for auth and database integrations.",
+            "status": "pending",
+            "testStrategy": "Manually verify the structure and content of the created templates. Test by generating a project using each template and ensuring it builds and runs without errors."
+          },
+          {
+            "id": 2,
+            "title": "Develop auth integration templates",
+            "description": "Create templates for Clerk, NextAuth.js, and Supabase auth integrations",
+            "dependencies": [
+              1
+            ],
+            "details": "Implement auth templates for Clerk, NextAuth.js, and Supabase. Include necessary configuration files, API routes, and components for each auth provider. Use placeholders for sensitive information like API keys.",
+            "status": "pending",
+            "testStrategy": "Create test projects using each auth template. Verify that authentication flows (sign up, sign in, sign out) work correctly for each provider."
+          },
+          {
+            "id": 3,
+            "title": "Create database integration templates",
+            "description": "Develop templates for Prisma, Drizzle, and Supabase database integrations",
+            "dependencies": [
+              1
+            ],
+            "details": "Implement database templates for Prisma, Drizzle, and Supabase. Include configuration files, schema definitions, and basic CRUD operations for each ORM/database solution. Use placeholders for connection strings and other sensitive data.",
+            "status": "pending",
+            "testStrategy": "Generate test projects with each database template. Verify that database connections can be established and basic CRUD operations work as expected."
+          },
+          {
+            "id": 4,
+            "title": "Implement feature templates",
+            "description": "Create templates for common features like dashboard and profile",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "Develop feature templates for dashboard and profile components. Include necessary pages, components, and API routes. Ensure these templates can be easily integrated with different auth and database solutions.",
+            "status": "pending",
+            "testStrategy": "Create test projects that include these feature templates. Verify that the features render correctly and interact properly with the chosen auth and database integrations."
+          },
+          {
+            "id": 5,
+            "title": "Set up templating system and package structure",
+            "description": "Implement EJS templating and organize the package structure",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "details": "Set up EJS or a similar templating system for dynamic content generation. Organize the package structure to include all created templates. Implement a system for combining different templates (base, auth, database, features) into a cohesive project structure.",
+            "status": "pending",
+            "testStrategy": "Test the templating system by generating projects with various combinations of templates. Ensure that the resulting projects are correctly structured and all placeholders are properly replaced."
+          }
+        ]
       },
       {
         "id": 5,
@@ -291,7 +350,7 @@
     ],
     "metadata": {
       "created": "2025-06-15T19:14:07.600Z",
-      "updated": "2025-06-21T06:08:51.110Z",
+      "updated": "2025-06-21T06:45:37.573Z",
       "description": "Tasks for master context"
     }
   }

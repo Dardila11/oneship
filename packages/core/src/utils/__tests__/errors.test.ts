@@ -9,6 +9,7 @@ import {
   TemplateError,
   ValidationError,
 } from "../errors.js"
+import { logger } from "../logger.js"
 
 describe("Error Handling Utilities", () => {
   const exit = vi
@@ -63,7 +64,7 @@ describe("Error Handling Utilities", () => {
   describe("handleError", () => {
     it("should handle BaseError instances correctly", () => {
       const err = new ConfigError("Invalid config", { path: "/test" })
-      handleError(err)
+      handleError(err, logger)
       expect(error).toHaveBeenCalledWith("Error [CONFIG_ERROR]: Invalid config")
       expect(error).toHaveBeenCalledWith("Details:", { path: "/test" })
       expect(exit).toHaveBeenCalledWith(1)
@@ -71,7 +72,7 @@ describe("Error Handling Utilities", () => {
 
     it("should handle standard Error instances correctly", () => {
       const err = new Error("Unexpected error")
-      handleError(err)
+      handleError(err, logger)
       expect(error).toHaveBeenCalledWith(
         "An unexpected error occurred: Unexpected error"
       )
@@ -80,7 +81,7 @@ describe("Error Handling Utilities", () => {
 
     it("should handle unknown error types", () => {
       const err = "Just a string error"
-      handleError(err)
+      handleError(err, logger)
       expect(error).toHaveBeenCalledWith(
         "An unknown error occurred:",
         "Just a string error"

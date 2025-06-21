@@ -1,6 +1,7 @@
 /**
  * Custom error classes for OneShip CLI
  */
+import type { Logger } from "winston"
 
 // Base class for custom errors
 export class BaseError extends Error {
@@ -54,16 +55,16 @@ export class ApiError extends BaseError {
 }
 
 // Error handling utility
-export function handleError(error: unknown): void {
+export function handleError(error: unknown, logger: Logger): void {
   if (error instanceof BaseError) {
-    console.error(`Error [${error.code}]: ${error.message}`)
+    logger.error(`[${error.code}] ${error.message}`)
     if (error.details) {
-      console.error("Details:", error.details)
+      logger.error("Details:", error.details)
     }
   } else if (error instanceof Error) {
-    console.error(`An unexpected error occurred: ${error.message}`)
+    logger.error(`An unexpected error occurred: ${error.message}`)
   } else {
-    console.error("An unknown error occurred:", error)
+    logger.error("An unknown error occurred:", error)
   }
   process.exit(1)
 }
