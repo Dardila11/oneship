@@ -2,6 +2,7 @@
 import { handleError, logger } from "@oneship/core"
 import { Command } from "commander"
 import { createRequire } from "module"
+import { addCommand } from "./commands/add.js"
 
 const require = createRequire(import.meta.url)
 const packageJson = require("../package.json")
@@ -14,6 +15,9 @@ async function main() {
       .name("oneship")
       .version(packageJson.version)
       .description(packageJson.description)
+
+    // Register commands
+    program.addCommand(addCommand)
 
     // Example command
     program
