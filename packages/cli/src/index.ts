@@ -1,13 +1,32 @@
 #!/usr/bin/env node
+import { handleError, logger } from "@oneship/core"
 import { Command } from "commander"
+import { createRequire } from "module"
+
+const require = createRequire(import.meta.url)
+const packageJson = require("../package.json")
 
 const program = new Command()
 
-program
-  .name("oneship")
-  .description("CLI toolkit for Oneship")
-  .version("0.0.1")
-  .option("-v, --version", "output the version number")
-  .option("-h, --help", "display help for command")
+async function main() {
+  try {
+    program
+      .name("oneship")
+      .version(packageJson.version)
+      .description(packageJson.description)
 
-program.parse(process.argv)
+    // Example command
+    program
+      .command("hello")
+      .description("A simple test command")
+      .action(() => {
+        logger.info("Hello from OneShip CLI!")
+      })
+
+    await program.parseAsync(process.argv)
+  } catch (error) {
+    handleError(error, logger)
+  }
+}
+
+main()
