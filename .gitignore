@@ -33,3 +33,5 @@ coverage/
 # Misc
 *.tgz
 *.tsbuildinfo
+
+aii.md

@@ -76,8 +76,61 @@
         "dependencies": [
           1
         ],
-        "status": "pending",
-        "subtasks": []
+        "status": "in-progress",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement logging utilities",
+            "description": "Create a logging module with colored output and formatting options",
+            "dependencies": [],
+            "details": "Implement a Logger class with methods for different log levels (info, warn, error, debug). Use a library like chalk for colored output. Include options for log formatting and timestamp inclusion.",
+            "status": "done",
+            "testStrategy": "Write unit tests for each log level and formatting option"
+          },
+          {
+            "id": 2,
+            "title": "Create configuration management utilities",
+            "description": "Develop utilities for managing .env files and configuration settings",
+            "dependencies": [],
+            "details": "Implement functions to read from .env files, parse environment variables, and provide a centralized configuration object. Include support for different environments (development, production, etc.).",
+            "status": "in-progress",
+            "testStrategy": "Create test .env files and verify correct parsing and configuration loading"
+          },
+          {
+            "id": 3,
+            "title": "Implement error handling utilities",
+            "description": "Create a set of custom error classes and error handling functions",
+            "dependencies": [
+              1
+            ],
+            "details": "Define custom error classes for different types of errors (e.g., ValidationError, NetworkError). Implement a global error handler that logs errors using the logging utilities and provides appropriate error responses.",
+            "status": "pending",
+            "testStrategy": "Test error throwing and handling for various scenarios, including integration with the logging utilities"
+          },
+          {
+            "id": 4,
+            "title": "Develop utility functions for string manipulation",
+            "description": "Create a set of helper functions for common string operations",
+            "dependencies": [],
+            "details": "Implement functions for camelCase, snake_case, and kebab-case conversions, string truncation, pluralization, and other common string manipulations that may be useful across the project.",
+            "status": "pending",
+            "testStrategy": "Write unit tests for each string manipulation function with various input scenarios"
+          },
+          {
+            "id": 5,
+            "title": "Create an index.ts file to export all utilities",
+            "description": "Consolidate all utility exports into a single index.ts file for easy importing",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "details": "Create an index.ts file that imports and re-exports all utility functions and classes from the various modules (fs, template, package, logging, configuration, error handling, string manipulation). Ensure proper TypeScript typing for all exports.",
+            "status": "pending",
+            "testStrategy": "Verify that all utilities can be imported correctly from the index file in a test script"
+          }
+        ]
       },
       {
         "id": 3,
@@ -192,7 +245,7 @@
     ],
     "metadata": {
       "created": "2025-06-15T19:14:07.600Z",
-      "updated": "2025-06-15T23:02:48.935Z",
+      "updated": "2025-06-21T05:35:54.259Z",
       "description": "Tasks for master context"
     }
   }
