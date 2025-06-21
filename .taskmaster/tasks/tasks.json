@@ -76,7 +76,7 @@
         "dependencies": [
           1
         ],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -93,7 +93,7 @@
             "description": "Develop utilities for managing .env files and configuration settings",
             "dependencies": [],
             "details": "Implement functions to read from .env files, parse environment variables, and provide a centralized configuration object. Include support for different environments (development, production, etc.).",
-            "status": "in-progress",
+            "status": "done",
             "testStrategy": "Create test .env files and verify correct parsing and configuration loading"
           },
           {
@@ -104,7 +104,7 @@
               1
             ],
             "details": "Define custom error classes for different types of errors (e.g., ValidationError, NetworkError). Implement a global error handler that logs errors using the logging utilities and provides appropriate error responses.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test error throwing and handling for various scenarios, including integration with the logging utilities"
           },
           {
@@ -113,7 +113,7 @@
             "description": "Create a set of helper functions for common string operations",
             "dependencies": [],
             "details": "Implement functions for camelCase, snake_case, and kebab-case conversions, string truncation, pluralization, and other common string manipulations that may be useful across the project.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Write unit tests for each string manipulation function with various input scenarios"
           },
           {
@@ -127,7 +127,7 @@
               4
             ],
             "details": "Create an index.ts file that imports and re-exports all utility functions and classes from the various modules (fs, template, package, logging, configuration, error handling, string manipulation). Ensure proper TypeScript typing for all exports.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify that all utilities can be imported correctly from the index file in a test script"
           }
         ]
@@ -143,7 +143,53 @@
           2
         ],
         "status": "pending",
-        "subtasks": []
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up CLI package structure and entry point",
+            "description": "Initialize the CLI package with necessary dependencies and create the main entry point file that will serve as the command router using Commander.js.",
+            "dependencies": [],
+            "details": "1. Create the package directory structure with src/ folder\n2. Initialize package.json with pnpm init\n3. Install required dependencies (commander, prompts, fs-extra, execa)\n4. Install dev dependencies (typescript, @types/node, @types/fs-extra)\n5. Create tsconfig.json with appropriate settings\n6. Implement the main src/index.ts file with Commander.js setup\n7. Configure package.json with bin entry pointing to the compiled index.js\n8. Set up build script using tsc",
+            "status": "pending",
+            "testStrategy": "Verify the CLI can be executed and displays help information correctly"
+          },
+          {
+            "id": 2,
+            "title": "Implement 'add' command framework",
+            "description": "Create the base structure for the 'add' command and its subcommand registration system.",
+            "dependencies": [],
+            "details": "1. Create src/commands/add.ts file\n2. Implement the registerAddCommand function that takes a Commander instance\n3. Set up the base 'add' command\n4. Create placeholder subcommands for auth, db, env, and feature\n5. Implement the command registration pattern\n6. Import and register the add command in the main index.ts file\n7. Set up the basic action handlers with prompts for options",
+            "status": "pending",
+            "testStrategy": "Test that 'add' command and subcommands appear in help output and can be invoked without errors"
+          },
+          {
+            "id": 3,
+            "title": "Implement auth and database feature modules",
+            "description": "Create the feature modules for authentication and database integration that will be used by the 'add auth' and 'add db' commands.",
+            "dependencies": [],
+            "details": "1. Create src/features/auth.ts and src/features/database.ts\n2. Implement addAuth function with support for different providers (clerk, next-auth, supabase)\n3. Implement addDatabase function with support for different databases (postgres, mysql, mongodb)\n4. Create templates for configuration files that will be added to user projects\n5. Implement provider-specific logic for each auth option\n6. Implement database-specific logic for each database option\n7. Add validation for project compatibility",
+            "status": "pending",
+            "testStrategy": "Create mock project structures and verify that auth and database features can be correctly added"
+          },
+          {
+            "id": 4,
+            "title": "Implement env and custom feature modules",
+            "description": "Create the feature modules for environment variables and custom feature templates that will be used by the 'add env' and 'add feature' commands.",
+            "dependencies": [],
+            "details": "1. Create src/features/env.ts and src/features/feature.ts\n2. Implement addEnv function for setting up environment variables\n3. Implement addFeature function for adding custom features\n4. Create templates for .env files and related configuration\n5. Set up a system for managing custom feature templates\n6. Implement file modification utilities for updating existing files\n7. Add support for different project structures",
+            "status": "pending",
+            "testStrategy": "Test adding environment variables to different project types and verify custom feature template application"
+          },
+          {
+            "id": 5,
+            "title": "Implement project utilities and error handling",
+            "description": "Create utility functions for project detection, validation, and implement robust error handling throughout the CLI.",
+            "dependencies": [],
+            "details": "1. Create src/utils/project.ts for project-related utilities\n2. Implement functions to detect project type (Next.js, React, etc.)\n3. Create src/utils/errors.ts for standardized error handling\n4. Implement validation functions to check if commands can be executed in current project\n5. Add colorful console output for errors and success messages\n6. Implement logging utilities\n7. Add graceful error handling for all commands\n8. Create a final integration test script that verifies all commands",
+            "status": "pending",
+            "testStrategy": "Test error scenarios like invalid project structures, missing dependencies, and verify helpful error messages are displayed"
+          }
+        ]
       },
       {
         "id": 4,
@@ -245,7 +291,7 @@
     ],
     "metadata": {
       "created": "2025-06-15T19:14:07.600Z",
-      "updated": "2025-06-21T05:35:54.259Z",
+      "updated": "2025-06-21T06:08:51.110Z",
       "description": "Tasks for master context"
     }
   }
