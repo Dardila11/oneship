@@ -38,7 +38,7 @@ export async function installDrizzle(projectName: string, projectDir: string) {
 export async function installShadcn(projectDir: string) {
   console.log("Initializing Shadcn UI...")
   const execa = await getExeca()
-  await execa("pnpm", ["dlx", "shadcn@latest", "init"], {
+  await execa("pnpm", ["dlx", "shadcn@latest", "init", "-b", "neutral"], {
     cwd: projectDir,
     stdio: "inherit",
   })
@@ -70,8 +70,24 @@ export async function installBetterAuth(
     projectName,
     "--db",
     options.db,
+    "--adapter",
+    options.orm,
   ])
 
   // add better-auth dependencies
   await runPnpmNoLogs(["add", "better-auth"], projectDir)
+}
+
+export async function installInternationalization(
+  projectName: string,
+  projectDir: string
+) {
+  console.log("Adding Internationalization...")
+  await runHygenSilent([
+    "feature",
+    "use-internationalization",
+    "--name",
+    projectName,
+  ])
+  await runPnpmNoLogs(["add", "next-intl"], projectDir)
 }

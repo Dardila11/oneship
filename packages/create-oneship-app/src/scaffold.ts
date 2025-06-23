@@ -2,6 +2,7 @@ import {
   installBetterAuth,
   installClerk,
   installDrizzle,
+  installInternationalization,
   installNextAuth,
   installShadcn,
   installTailwind,
@@ -46,6 +47,10 @@ export async function scaffoldProject(
 
   if (options.shadcn) {
     await installShadcn(projectDir)
+  }
+
+  if (options.internationalization) {
+    await installInternationalization(projectName, projectDir)
   }
 
   console.log("Installing dependencies...")

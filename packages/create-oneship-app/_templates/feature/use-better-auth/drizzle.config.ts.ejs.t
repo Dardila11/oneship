@@ -1,6 +1,7 @@
 ---
 to: <%= name %>/drizzle.config.ts
 db: "<%= db %>"
+force: true
 ---
 import { defineConfig } from 'drizzle-kit';
 
@@ -11,6 +12,8 @@ export default defineConfig({
   dialect: 'pg',
 <% } else if (db === 'mysql') { %>
   dialect: 'mysql2',
+<% } else if (db === 'sqlite') { %>
+  dialect: 'sqlite',
 <% } %>
   dbCredentials: {
     url: process.env.DATABASE_URL ?? '',

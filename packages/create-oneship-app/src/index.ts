@@ -15,12 +15,14 @@ async function main() {
     .option("--drizzle", "Enable Drizzle ORM")
     .option("--shadcn", "Enable Shadcn UI")
     .option("--next-auth", "Enable NextAuth.js")
+    .option("--internationalization", "Enable Internationalization")
     .action(async (dir, options) => {
       const isInteractive =
         !options.tailwind &&
         !options.drizzle &&
         !options.shadcn &&
-        !options.nextAuth
+        !options.nextAuth &&
+        !options.internationalization
 
       await handleNewProject({
         projectDir: dir,

@@ -3,4 +3,4 @@ to: <%= name %>/src/app/layout.tsx
 inject: true
 before: "{children}"
 ---
-<Providers> 
+<NextIntlClientProvider messages={messages}>

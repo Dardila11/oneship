@@ -1,6 +1,7 @@
 ---
 to: <%= name %>/src/lib/db/client.ts
 db: "<%= db %>"
+force: true
 ---
 <% if (db === 'postgres') { %>
 import { drizzle } from 'drizzle-orm/node-postgres';

@@ -21,5 +21,6 @@ export function validateAndNormalizeOptions(
     authProvider: normalizedOptions.authProvider ?? "none",
     orm: normalizedOptions.orm ?? "drizzle",
     db: normalizedOptions.db ?? "postgres",
+    internationalization: normalizedOptions.internationalization ?? false,
   }
 }

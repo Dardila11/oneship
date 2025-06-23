@@ -13,6 +13,7 @@ export interface FeatureOptions {
     | "none"
   orm: "drizzle" | "prisma" | "none"
   db: "postgres" | "mysql" | "sqlite" | "none"
+  internationalization: boolean
 }
 
 export async function getProjectName(
@@ -85,6 +86,12 @@ export async function promptForFeatures(): Promise<FeatureOptions> {
         type: "confirm",
         name: "shadcn",
         message: "Add Shadcn UI for your component library?",
+        initial: true,
+      },
+      {
+        type: "confirm",
+        name: "internationalization",
+        message: "Add Internationalization (next-intl)?",
         initial: true,
       },
     ],

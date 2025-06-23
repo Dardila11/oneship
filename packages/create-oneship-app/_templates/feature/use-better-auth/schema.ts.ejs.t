@@ -1,6 +1,7 @@
 ---
 to: <%= name %>/drizzle/schema.ts
 db: "<%= db %>"
+force: true
 ---
 <% if (db === 'postgres') { %>
 import { pgTable, serial, text, varchar, timestamp, primaryKey } from "drizzle-orm/pg-core";

@@ -1,5 +1,5 @@
 ---
-to: <%= name %>/next.config.mjs
+to: <%= name %>/next.config.ts
 ---
 /** @type {import('next').NextConfig} */
 const nextConfig = {};

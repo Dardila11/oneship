@@ -16,4 +16,10 @@ db: "<%= db %>"
     "db:studio": "drizzle-kit studio",
     "db:migrate": "drizzle-kit migrate:mysql",
     "db:pull": "drizzle-kit pull:mysql",
+<% } else if (db === 'sqlite') { %>
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:studio": "drizzle-kit studio",
+    "db:migrate": "drizzle-kit migrate:sqlite",
+    "db:pull": "drizzle-kit pull:sqlite",
 <% } %> 

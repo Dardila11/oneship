@@ -1,6 +1,6 @@
 ---
 to: <%= name %>/src/app/layout.tsx
 inject: true
-after: "import type { Metadata } from 'next'"
+prepend: true
 ---
-import { Providers } from "./providers; 
+import { Providers } from "./providers"; 

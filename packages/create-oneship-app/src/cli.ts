@@ -22,6 +22,7 @@ interface CLIOptions {
     | "none"
   orm?: "drizzle" | "prisma" | "none"
   db?: "postgres" | "mysql" | "sqlite" | "none"
+  internationalization?: boolean
 }
 /**
  * Handle the new project creation process.
@@ -47,6 +48,7 @@ export async function handleNewProject(options: CLIOptions) {
     authProvider,
     orm,
     db,
+    internationalization,
   } = options
 
   const name = await getProjectName(projectDirectory)
@@ -72,6 +74,7 @@ export async function handleNewProject(options: CLIOptions) {
       authProvider: authProvider || "none",
       orm: orm || "drizzle",
       db: db || "postgres",
+      internationalization: internationalization || false,
     }
   }
 

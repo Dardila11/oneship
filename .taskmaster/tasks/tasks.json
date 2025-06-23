@@ -275,7 +275,61 @@
           4
         ],
         "status": "pending",
-        "subtasks": []
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up package structure and CLI entry point",
+            "description": "Initialize the package.json, install dependencies, and create the basic CLI structure with commander and prompts integration.",
+            "dependencies": [],
+            "details": "1. Run `pnpm init` to create package.json\n2. Install required dependencies (commander, prompts, fs-extra, execa)\n3. Install dev dependencies (typescript, @types/node, @types/fs-extra)\n4. Configure the package.json with bin entry pointing to dist/index.js\n5. Create the basic CLI structure in src/index.ts with commander setup\n6. Set up TypeScript configuration (tsconfig.json)\n7. Add build script to compile TypeScript to JavaScript",
+            "status": "pending",
+            "testStrategy": "Manually verify the CLI can be executed and displays help information"
+          },
+          {
+            "id": 2,
+            "title": "Implement interactive prompts for project configuration",
+            "description": "Create the interactive prompts flow to collect user preferences for project configuration including language choice, UI libraries, and auth options.",
+            "dependencies": [
+              1
+            ],
+            "details": "1. Implement prompts for project name if not provided as argument\n2. Add language selection prompt (TypeScript/JavaScript)\n3. Add UI library prompts (TailwindCSS, Shadcn UI)\n4. Add authentication prompts with conditional provider selection\n5. Structure the collected options into a configuration object\n6. Add validation for user inputs\n7. Implement a way to save configuration for later reference",
+            "status": "pending",
+            "testStrategy": "Test different prompt flows including skipped prompts based on previous answers"
+          },
+          {
+            "id": 3,
+            "title": "Create project templates and directory structure",
+            "description": "Set up the template directory structure and implement the logic to copy and customize templates based on user configuration.",
+            "dependencies": [
+              2
+            ],
+            "details": "1. Create a templates directory with base Next.js app structure\n2. Add variant templates for TypeScript and JavaScript\n3. Create template fragments for optional features (Tailwind, Shadcn, Auth providers)\n4. Implement the createDirectory function to set up the project folder\n5. Create the fs-extra copy logic to transfer base templates\n6. Implement template rendering with variable substitution\n7. Add logic to conditionally include files based on selected options",
+            "status": "pending",
+            "testStrategy": "Verify template generation with different configuration combinations"
+          },
+          {
+            "id": 4,
+            "title": "Implement dependency installation and Git initialization",
+            "description": "Add functionality to install the appropriate dependencies based on selected options and initialize a Git repository.",
+            "dependencies": [
+              3
+            ],
+            "details": "1. Create a function to generate the appropriate package.json based on selected options\n2. Implement the dependency installation logic using execa\n3. Add support for different package managers (npm, yarn, pnpm)\n4. Implement Git repository initialization\n5. Create a .gitignore file with appropriate entries\n6. Add initial commit with project setup\n7. Handle errors during installation process",
+            "status": "pending",
+            "testStrategy": "Test installation with different package managers and verify Git initialization"
+          },
+          {
+            "id": 5,
+            "title": "Add error handling, validation, and post-installation instructions",
+            "description": "Implement comprehensive error handling, input validation, and helpful post-installation instructions for users.",
+            "dependencies": [
+              4
+            ],
+            "details": "1. Add try/catch blocks around critical operations\n2. Implement input validation for project name and path\n3. Add checks for existing directories and conflicts\n4. Create helpful error messages with suggested fixes\n5. Implement colorful console output for better UX\n6. Add post-installation instructions with next steps\n7. Create a function to detect and suggest available commands based on the generated project",
+            "status": "pending",
+            "testStrategy": "Test error scenarios like invalid project names, existing directories, and failed installations"
+          }
+        ]
       },
       {
         "id": 6,
