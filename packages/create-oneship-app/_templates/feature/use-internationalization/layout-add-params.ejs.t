@@ -1,6 +1,6 @@
 ---
 to: <%= name %>/src/app/layout.tsx
 inject: true
-replace: '<html lang="en">'
+after: "children,"
 ---
-<html lang={locale}>
+params

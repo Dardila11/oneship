@@ -1,6 +1,6 @@
 ---
 to: <%= name %>/src/app/layout.tsx
 inject: true
-replace: '<html lang="en">'
+replace: "export default"
 ---
-<html lang={locale}>
+export default async 

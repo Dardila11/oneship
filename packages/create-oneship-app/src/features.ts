@@ -1,5 +1,5 @@
 import { FeatureOptions } from "./prompts"
-import { runHygenSilent, runPnpmNoLogs } from "./utils"
+import { runHygen, runHygenSilent, runPnpmNoLogs } from "./utils"
 
 async function getExeca() {
   const { execa } = await import("execa")
@@ -83,11 +83,6 @@ export async function installInternationalization(
   projectDir: string
 ) {
   console.log("Adding Internationalization...")
-  await runHygenSilent([
-    "feature",
-    "use-internationalization",
-    "--name",
-    projectName,
-  ])
+  await runHygen(["feature", "use-internationalization", "--name", projectName])
   await runPnpmNoLogs(["add", "next-intl"], projectDir)
 }

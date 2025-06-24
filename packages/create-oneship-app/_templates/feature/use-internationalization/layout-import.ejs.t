@@ -1,10 +1,10 @@
 ---
 to: <%= name %>/src/app/layout.tsx
 inject: true
-after: "import type { Metadata } from 'next'"
+prepend: true
 ---
-import {NextIntlClientProvider} from 'next-intl';
-import {getMessages, unstable_setRequestLocale} from 'next-intl/server';
-import {routing} from '/src/i18n/routing';
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 
 
