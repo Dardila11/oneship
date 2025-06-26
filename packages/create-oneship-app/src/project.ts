@@ -1,7 +1,7 @@
 import fs from "fs-extra"
 import path from "path"
 import prompts from "prompts"
-import { runHygenSilent } from "./utils"
+import { runHygenSilent } from "./utils/utils"
 
 export async function createProjectDirectory(
   projectName: string

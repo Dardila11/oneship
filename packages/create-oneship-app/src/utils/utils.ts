@@ -51,3 +51,18 @@ export async function runPnpmSilent(args: string[], cwd: string) {
   const execa = await getExeca()
   return execa("pnpm", args, { cwd })
 }
+
+export async function createLocalizedAppFolder(projectDir: string) {
+  const execa = await getExeca()
+  await execa("mv", ["src/app", "src/app_temp"], { cwd: projectDir })
+  await execa("mkdir", ["src/app"], { cwd: projectDir })
+  await execa("mv", ["src/app_temp", "src/app/[locale]"], { cwd: projectDir })
+}
+
+export async function localizedAppFolderExists(projectDir: string) {
+  const execa = await getExeca()
+  const { stdout } = await execa("ls", ["src/app/[locale]/"], {
+    cwd: projectDir,
+  })
+  return stdout.length > 0
+}

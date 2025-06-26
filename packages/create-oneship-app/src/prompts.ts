@@ -94,6 +94,15 @@ export async function promptForFeatures(): Promise<FeatureOptions> {
         message: "Add Internationalization (next-intl)?",
         initial: true,
       },
+      // {
+      //   type: "select",
+      //   name: "internationalization",
+      //   message: "Add Internationalization (next-intl)?",
+      //   choices: [
+      //     { title: "With i18n routing [locale]", value: "with-i18n-routing" },
+      //     { title: "Without i18n routing", value: "without-i18n-routing" },
+      //   ],
+      // },
     ],
     {
       onCancel: () => {

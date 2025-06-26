@@ -8,7 +8,7 @@ import {
   installTailwind,
 } from "./features"
 import { FeatureOptions } from "./prompts"
-import { runPnpm } from "./utils"
+import { runPnpm } from "./utils/utils"
 
 async function getExeca() {
   const { execa } = await import("execa")

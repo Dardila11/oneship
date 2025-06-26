@@ -1,5 +1,10 @@
 import { FeatureOptions } from "./prompts"
-import { runHygen, runHygenSilent, runPnpmNoLogs } from "./utils"
+import {
+  createLocalizedAppFolder,
+  runHygen,
+  runHygenSilent,
+  runPnpmNoLogs,
+} from "./utils/utils"
 
 async function getExeca() {
   const { execa } = await import("execa")
@@ -85,4 +90,7 @@ export async function installInternationalization(
   console.log("Adding Internationalization...")
   await runHygen(["feature", "use-internationalization", "--name", projectName])
   await runPnpmNoLogs(["add", "next-intl"], projectDir)
+  // add [locate] route src/[locale]/app by moving src/app to src/app/[locale]/
+  // src/app/[locale]/layout.tsx
+  await createLocalizedAppFolder(projectDir)
 }
