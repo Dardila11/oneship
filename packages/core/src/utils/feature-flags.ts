@@ -1,4 +1,4 @@
-import { FeatureOptions } from "../prompts"
+import { FeatureOptions } from "../types.js"
 
 export function validateAndNormalizeOptions(
   options: Partial<FeatureOptions>

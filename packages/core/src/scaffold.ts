@@ -6,9 +6,9 @@ import {
   installNextAuth,
   installShadcn,
   installTailwind,
-} from "./features"
-import { FeatureOptions } from "./prompts"
-import { runPnpm } from "./utils/utils"
+} from "./features.js"
+import { FeatureOptions } from "./types.js"
+import { runPnpm } from "./utils/scaffold-utils.js"
 
 async function getExeca() {
   const { execa } = await import("execa")
@@ -34,7 +34,7 @@ export async function scaffoldProject(
   }
 
   if (options.authProvider === "next-auth") {
-    await installNextAuth(projectName)
+    await installNextAuth(projectName, projectDir)
   }
 
   if (options.authProvider === "better-auth") {

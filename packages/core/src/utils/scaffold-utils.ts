@@ -1,7 +1,5 @@
-import { runner } from "hygen"
-import Logger from "hygen/dist/logger"
+import { Logger, runner } from "hygen"
 import path from "path"
-import prompts from "prompts"
 
 async function getExeca() {
   const { execa } = await import("execa")
@@ -17,24 +15,23 @@ const exec = async (action: string, body: string) => {
   return execa(action, { ...opts, shell: true })
 }
 
-export function getRunnerConfig() {
+export function getRunnerConfig(cwd?: string) {
   return {
     templates: defaultTemplates,
-    cwd: process.cwd(), // Run from the directory where the CLI was executed
+    cwd: cwd || process.cwd(), // Run from the directory where the CLI was executed
     logger,
-    createPrompter: () => prompts,
     exec,
   }
 }
 
-export async function runHygenSilent(args: string[]) {
-  const config = getRunnerConfig()
+export async function runHygenSilent(args: string[], cwd?: string) {
+  const config = getRunnerConfig(cwd)
   config.logger = new Logger(() => {}) // Silent logger
   return runner(args, config)
 }
 
-export async function runHygen(args: string[]) {
-  return runner(args, getRunnerConfig())
+export async function runHygen(args: string[], cwd?: string) {
+  return runner(args, getRunnerConfig(cwd))
 }
 
 export async function runPnpm(args: string[], cwd: string) {
