@@ -1,9 +1,6 @@
-import { runHygenSilent } from "./utils/scaffold-utils.js"
+import { runHygen } from "./utils/scaffold-utils.js"
 
-export async function generateBaseProject(
-  projectName: string,
-  projectDir: string
-) {
+export async function generateBaseProject(projectName: string) {
   console.log("Creating a new OneShip project...")
-  await runHygenSilent(["project", "new", "--name", projectName], projectDir)
+  await runHygen(["project", "new", "--name", projectName])
 }

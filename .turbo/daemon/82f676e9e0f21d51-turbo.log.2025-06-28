@@ -1,0 +1,236 @@
+2025-06-28T03:15:33.224806Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/1.cookie"), AnchoredSystemPathBuf(".turbo/cookies/.turbo-cookie")}
+2025-06-28T03:15:33.224816Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:15:33.325397Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/2.cookie")}
+2025-06-28T03:15:33.325406Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:15:34.524953Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/3.cookie")}
+2025-06-28T03:15:34.524962Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:15:34.624455Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/4.cookie")}
+2025-06-28T03:15:34.624465Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:15:35.525689Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/5.cookie")}
+2025-06-28T03:15:35.525697Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:15:35.624826Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/6.cookie")}
+2025-06-28T03:15:35.624836Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:15:36.425672Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/7.cookie")}
+2025-06-28T03:15:36.425680Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:16:10.424999Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:16:10.425009Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:16:58.525579Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:16:58.525589Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:16:58.525610Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:17:37.225227Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/package.json")}
+2025-06-28T03:17:37.225236Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:17:52.824474Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/8.cookie")}
+2025-06-28T03:17:52.824482Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:17:52.925604Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/9.cookie")}
+2025-06-28T03:17:52.925613Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:17:53.924261Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/10.cookie")}
+2025-06-28T03:17:53.924269Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:17:54.025330Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/11.cookie")}
+2025-06-28T03:17:54.025339Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:17:54.725120Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/13.cookie"), AnchoredSystemPathBuf(".turbo/cookies/12.cookie")}
+2025-06-28T03:17:54.725133Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:17:55.425930Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/14.cookie")}
+2025-06-28T03:17:55.425939Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:18:03.324356Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:18:03.324366Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:18:03.324409Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:25:26.925361Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/package.json")}
+2025-06-28T03:25:26.925384Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:25:35.325487Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_47590_31344f1ea1fede329d2b7c433a9b036d")}
+2025-06-28T03:25:35.325501Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:25:36.625689Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.606901197")}
+2025-06-28T03:25:36.625699Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:25:56.426054Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/15.cookie")}
+2025-06-28T03:25:56.426064Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:25:56.525308Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/16.cookie")}
+2025-06-28T03:25:56.525320Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:25:57.625335Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/17.cookie"), AnchoredSystemPathBuf(".turbo/cookies/18.cookie")}
+2025-06-28T03:25:57.625344Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:25:58.525248Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/20.cookie"), AnchoredSystemPathBuf(".turbo/cookies/19.cookie")}
+2025-06-28T03:25:58.525257Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:25:59.426081Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/21.cookie")}
+2025-06-28T03:25:59.426091Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:26:08.225554Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/utils/scaffold-utils.ts")}
+2025-06-28T03:26:08.225564Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:27:57.925868Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_48038_00240032b4843ad9103754ceb5c8df02")}
+2025-06-28T03:27:57.925928Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:27:59.225388Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.3328088277")}
+2025-06-28T03:27:59.225398Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:27:59.625487Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_48055_23c752f407b5aa69e3a3a0330183c8a0"), AnchoredSystemPathBuf("")}
+2025-06-28T03:27:59.625499Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:00.824614Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.1442614843")}
+2025-06-28T03:28:00.824624Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:00.925714Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/package.json.1410064892"), AnchoredSystemPathBuf("packages/core/package.json")}
+2025-06-28T03:28:00.925725Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:28:26.025851Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/22.cookie")}
+2025-06-28T03:28:26.025864Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:26.125375Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/23.cookie")}
+2025-06-28T03:28:26.125386Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:27.224719Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/24.cookie")}
+2025-06-28T03:28:27.224726Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:27.324912Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/25.cookie")}
+2025-06-28T03:28:27.324921Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:28.024725Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/26.cookie"), AnchoredSystemPathBuf(".turbo/cookies/27.cookie")}
+2025-06-28T03:28:28.024734Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:28:28.725417Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/28.cookie")}
+2025-06-28T03:28:28.725426Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:18.125793Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:29:18.125801Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:29:18.125818Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:29:29.025379Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:29:29.025389Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:29:29.035247Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:29:29.125655Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/.npmrc"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/public/favicon.ico"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/globals.css"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/tsconfig.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/.gitignore"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/public/vercel.svg"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/next.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/public"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/layout.tsx"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/page.tsx"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src")}
+2025-06-28T03:29:29.125665Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:29:35.725663Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/globals.css"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/postcss.config.mjs"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/tailwind.config.ts")}
+2025-06-28T03:29:35.725673Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:29:35.925229Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_48427_8c27a48a24a71ead861ad637087c7b80")}
+2025-06-28T03:29:35.925240Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:37.325186Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.2126471236")}
+2025-06-28T03:29:37.325195Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:37.525288Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/drizzle"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/lib"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/drizzle/schema.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/drizzle"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/lib"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/drizzle.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/package.json")}
+2025-06-28T03:29:37.525308Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:29:37.725580Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_48470_e451cf92070c7eacf1d1ce10fe7f51ec"), AnchoredSystemPathBuf("")}
+2025-06-28T03:29:37.725592Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:39.124280Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.292116831")}
+2025-06-28T03:29:39.124288Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:39.425553Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_48503_e434ca7d86e78ea389f397de59258857")}
+2025-06-28T03:29:39.425563Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:40.724745Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.2804594070")}
+2025-06-28T03:29:40.724756Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:40.925036Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/drizzle/schema.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/drizzle.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/package.json.2762106195"), AnchoredSystemPathBuf("packages/create-oneship-app/package.json")}
+2025-06-28T03:29:40.925048Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:29:41.125573Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_48523_3a61a8212353dbd5c413b7e315eeedd2")}
+2025-06-28T03:29:41.125583Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:29:42.425242Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.1627681442")}
+2025-06-28T03:29:42.425251Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:30:10.525569Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:30:10.525578Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:30:30.024958Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:30:30.024970Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:30:30.024987Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:30:30.125628Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/.gitignore"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/public/vercel.svg"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/layout.tsx"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/page.tsx"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/src/app/globals.css"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/.npmrc"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/tsconfig.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/public/favicon.ico"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/public"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/my-oneship-app/next.config.ts")}
+2025-06-28T03:30:30.125638Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:31:51.425010Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/utils/scaffold-utils.ts")}
+2025-06-28T03:31:51.425021Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:32:11.725285Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/utils/scaffold-utils.ts")}
+2025-06-28T03:32:11.725300Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:32:20.525472Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/project.ts")}
+2025-06-28T03:32:20.525483Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:32:22.726098Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/project.ts")}
+2025-06-28T03:32:22.726109Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:32:22.763282Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:32:29.724827Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/29.cookie")}
+2025-06-28T03:32:29.724835Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:32:29.824863Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/30.cookie")}
+2025-06-28T03:32:29.824873Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:33:29.124792Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/features.ts")}
+2025-06-28T03:33:29.124805Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:34:11.625863Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/core/src/utils/scaffold-utils.ts")}
+2025-06-28T03:34:11.625943Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/core"), path: AnchoredSystemPathBuf("packages/core") }}))
+2025-06-28T03:34:25.025170Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/cli/src/commands/create.ts")}
+2025-06-28T03:34:25.025180Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@oneship/cli"), path: AnchoredSystemPathBuf("packages/cli") }}))
+2025-06-28T03:35:33.925032Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/31.cookie")}
+2025-06-28T03:35:33.925048Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:35:34.024780Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/32.cookie")}
+2025-06-28T03:35:34.024788Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:35:35.125305Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/34.cookie"), AnchoredSystemPathBuf(".turbo/cookies/33.cookie")}
+2025-06-28T03:35:35.125315Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:35:35.925508Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/35.cookie"), AnchoredSystemPathBuf(".turbo/cookies/36.cookie")}
+2025-06-28T03:35:35.925524Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:35:36.825255Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/cookies/37.cookie")}
+2025-06-28T03:35:36.825266Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:35:52.325330Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:35:52.325339Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:35:57.225469Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:35:57.225479Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:35:57.244876Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:35:57.325150Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/tsconfig.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/.npmrc"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/public"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/next.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/public/favicon.ico"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/globals.css"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/layout.tsx"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/.gitignore"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/public/vercel.svg"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/page.tsx")}
+2025-06-28T03:35:57.325160Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:10.124330Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/globals.css"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/tailwind.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/postcss.config.mjs")}
+2025-06-28T03:36:10.124339Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:10.425186Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_49497_994b89982eaf0333bb3a92a7612aafa5"), AnchoredSystemPathBuf("")}
+2025-06-28T03:36:10.425197Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:13.025252Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.025261Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.125787Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.125796Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.226483Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.226493Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.455548Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.455558Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.526321Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.526329Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.626213Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.626224Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.726105Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.726112Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.827153Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.827161Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:13.926608Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:13.926618Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.026409Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:14.026418Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.127002Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:14.127010Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.227674Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:14.227683Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.326235Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:14.326244Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.426362Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:14.426370Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.527767Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("")}
+2025-06-28T03:36:14.527776Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({}))
+2025-06-28T03:36:14.625836Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/node_modules")}
+2025-06-28T03:36:14.625846Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:14.625869Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:36:14.825225Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/drizzle"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.1233047881"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/lib"), AnchoredSystemPathBuf("pnpm-lock.yaml.4135451158")}
+2025-06-28T03:36:14.825239Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:14.926125Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/drizzle/schema.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/drizzle.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json")}
+2025-06-28T03:36:14.926134Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:14.926155Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:36:15.025121Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_49546_040d31ed78dff53e469b9a0408cec35e"), AnchoredSystemPathBuf("")}
+2025-06-28T03:36:15.025139Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:16.125421Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.3985815668"), AnchoredSystemPathBuf("pnpm-lock.yaml.2041834903")}
+2025-06-28T03:36:16.125430Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }, WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:16.225565Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.3985815668")}
+2025-06-28T03:36:16.225575Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:16.425737Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_49567_299b5a8f5abd9d49a1fd46fac95c705a")}
+2025-06-28T03:36:16.425755Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:17.725098Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.232138791"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.925421014")}
+2025-06-28T03:36:17.725108Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:17.826080Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/drizzle/schema.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/drizzle.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.925421014")}
+2025-06-28T03:36:17.826089Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:18.026114Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_49604_3b9abb5b291785bfe0102961423d3962"), AnchoredSystemPathBuf("")}
+2025-06-28T03:36:18.026133Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:19.625847Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.76801253"), AnchoredSystemPathBuf("pnpm-lock.yaml.2471556773"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json")}
+2025-06-28T03:36:19.625860Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }, WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:21.025571Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/components.json")}
+2025-06-28T03:36:21.025579Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:21.125417Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/globals.css")}
+2025-06-28T03:36:21.125425Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:21.325911Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_49664_6908db2573565922fce812f790644ffc")}
+2025-06-28T03:36:21.325920Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:22.625334Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.3855829944")}
+2025-06-28T03:36:22.625343Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:22.725892Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.3855829944"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.361979894")}
+2025-06-28T03:36:22.725904Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:22.925583Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_49681_c83c083def24e0b667ddab3956ca2b70")}
+2025-06-28T03:36:22.925604Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:23.524704Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.1053688805"), AnchoredSystemPathBuf("pnpm-lock.yaml.2013651657")}
+2025-06-28T03:36:23.524715Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:23.625179Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/i18n/routing.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/locales/en.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/i18n/request.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/i18n/navigation.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/next.config.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/layout.tsx"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/i18n"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/locales/es.json"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/middleware.ts"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/locales")}
+2025-06-28T03:36:23.625194Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:23.625217Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-06-28T03:36:23.826115Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(""), AnchoredSystemPathBuf("_tmp_49711_d3545a624148bef9ad5ceba11bd5cb86")}
+2025-06-28T03:36:23.826173Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:24.925174Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json.1452538488"), AnchoredSystemPathBuf("pnpm-lock.yaml.3373020784"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/package.json")}
+2025-06-28T03:36:24.925184Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }, WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:25.025254Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app/[locale]"), AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app/src/app_temp")}
+2025-06-28T03:36:25.025264Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))
+2025-06-28T03:36:25.225625Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("_tmp_49759_90a0ecff88384f13755938e36c5450cf"), AnchoredSystemPathBuf("")}
+2025-06-28T03:36:25.225645Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:26.524505Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("pnpm-lock.yaml.1849845729")}
+2025-06-28T03:36:26.524512Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-06-28T03:36:44.725349Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/create-oneship-app/my-oneship-app")}
+2025-06-28T03:36:44.725358Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("create-oneship-app"), path: AnchoredSystemPathBuf("packages/create-oneship-app") }}))

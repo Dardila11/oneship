@@ -37,7 +37,7 @@ async function handleNewProject(options: CLIOptions) {
   const projectDir = await createProjectDirectory(name)
 
   // First, generate the base project.
-  await generateBaseProject(name, projectDir)
+  await generateBaseProject(name)
 
   // Then, prompt for the features.
   let featureOptions: Partial<FeatureOptions>
