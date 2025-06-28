@@ -35,3 +35,7 @@ coverage/
 *.tsbuildinfo
 
 aii.md
+
+# Turborepo cache
+.turbo/
+.turbo/daemon/
