@@ -1,40 +1,15 @@
 #!/usr/bin/env node
-import { Command } from "commander"
-import packageJson from "../package.json"
-import { handleNewProject } from "./cli"
+import { createCommand } from "@oneship/cli/commands/create"
 
 async function main() {
-  const program = new Command()
-
-  program
-    .name(packageJson.name)
-    .version(packageJson.version)
-    .description(packageJson.description)
-    .argument("[dir]", "The directory to create the project in")
-    .option("--tailwind", "Enable Tailwind CSS")
-    .option("--drizzle", "Enable Drizzle ORM")
-    .option("--shadcn", "Enable Shadcn UI")
-    .option("--next-auth", "Enable NextAuth.js")
-    .option("--internationalization", "Enable Internationalization")
-    .action(async (dir, options) => {
-      const isInteractive =
-        !options.tailwind &&
-        !options.drizzle &&
-        !options.shadcn &&
-        !options.nextAuth &&
-        !options.internationalization
-
-      await handleNewProject({
-        projectDir: dir,
-        isInteractive,
-        ...options,
-      })
-    })
-
-  await program.parseAsync(process.argv)
+  // The `create-oneship-app` package is a lightweight wrapper
+  // that directly invokes the `create` command from `@oneship/cli`.
+  await createCommand.parseAsync(process.argv)
 }
 
 main().catch((err) => {
+  // Error handling should be done within the command itself,
+  // but we add a catch-all here for safety.
   console.error(err)
   process.exit(1)
 })

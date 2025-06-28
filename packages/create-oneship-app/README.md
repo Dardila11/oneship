@@ -1,6 +1,42 @@
-# `create-oneship-app`
+# create-oneship-app
 
-A command-line interface (CLI) tool to bootstrap a new Next.js application with a curated set of features, getting you from idea to production faster.
+The simplest way to start a new Oneship project.
+
+This package is a lightweight wrapper for the `create` command in the main `@oneship/cli` tool. Its purpose is to provide the standard `npx create-oneship-app` command that developers expect.
+
+## Usage
+
+To create a new project, run the following command in your terminal:
+
+```bash
+npx create-oneship-app my-new-project
+```
+
+You can also use the shorter `npm init` command:
+
+```bash
+npm init oneship-app my-new-project
+```
+
+This will create a new directory called `my-new-project` and scaffold a new OneShip application inside it.
+
+## Options
+
+You can pass options directly to the command to skip the interactive prompts:
+
+```bash
+npx create-oneship-app my-app --tailwind --drizzle --shadcn
+```
+
+All available options correspond to the features you can add to your project:
+
+- `--tailwind`: Enable Tailwind CSS
+- `--drizzle`: Enable Drizzle ORM
+- `--shadcn`: Enable Shadcn UI
+- `--next-auth`: Enable NextAuth.js
+- `--internationalization`: Enable Internationalization
+
+For more advanced project management, please refer to the main [`@oneship/cli`](../cli/README.md) package.
 
 ## Overview
 
@@ -21,17 +57,7 @@ This tool can configure the following features for your project:
 - **Database ORM**:
   - [Drizzle ORM](https://orm.drizzle.team/): A TypeScript-native ORM that gives you SQL-like syntax.
 - **Internationalization**:
-  - [next-intl](https://next-intl-docs.vercel.app/): A library for internationalization (i18n) in Next.js.
-
-## Usage
-
-To create a new OneShip project, run the following command in your terminal:
-
-```bash
-npx create-oneship-app
-```
-
-The CLI will guide you through a series of questions to configure your project based on the features listed above.
+  - [next-intl](https://next-intl.dev/): A library for internationalization (i18n) in Next.js.
 
 ## Development
 
@@ -68,16 +94,3 @@ If you want to contribute to the development of `create-oneship-app` itself, fol
     ```bash
     create-oneship-app
     ```
-
-## Project Structure
-
-- `_templates/`: Contains the [Hygen](https://www.hygen.io/) templates used for code generation and scaffolding.
-- `src/`: The TypeScript source code for the CLI.
-  - `index.ts`: The main entry point of the application.
-  - `cli.ts`: Defines the command-line interface using `commander`.
-  - `prompts.ts`: Contains the interactive prompts presented to the user.
-  - `features.ts`: Logic for installing and configuring the different features.
-  - `scaffold.ts`: Orchestrates the project scaffolding process.
-  - `utils/`: Utility functions used throughout the application.
-- `package.json`: Project metadata, scripts, and dependencies.
-- `tsconfig.json`: TypeScript configuration.

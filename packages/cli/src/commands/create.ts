@@ -1,29 +1,18 @@
-import { createProjectDirectory, generateBaseProject } from "./project"
 import {
-  getProjectName,
-  promptForFeatures,
+  generateBaseProject,
+  scaffoldProject,
+  validateAndNormalizeOptions,
   type FeatureOptions,
-} from "./prompts"
-import { scaffoldProject } from "./scaffold"
-import { validateAndNormalizeOptions } from "./utils/config"
+} from "@oneship/core"
+import { Command } from "commander"
+import { getProjectName, promptForFeatures } from "../prompts.js"
+import { createProjectDirectory } from "../utils/directory.js"
 
-interface CLIOptions {
+interface CLIOptions extends Partial<FeatureOptions> {
   projectDir?: string
   isInteractive: boolean
-  tailwind?: boolean
-  drizzle?: boolean
-  shadcn?: boolean
-  authProvider?:
-    | "clerk"
-    | "next-auth"
-    | "supabase-auth"
-    | "lucia"
-    | "better-auth"
-    | "none"
-  orm?: "drizzle" | "prisma" | "none"
-  db?: "postgres" | "mysql" | "sqlite" | "none"
-  internationalization?: boolean
 }
+
 /**
  * Handle the new project creation process.
  * @param options - The CLI options.
@@ -38,24 +27,17 @@ interface CLIOptions {
  * })
  * ```
  */
-export async function handleNewProject(options: CLIOptions) {
+async function handleNewProject(options: CLIOptions) {
   const {
-    projectDir: projectDirectory,
     isInteractive,
-    tailwind,
-    drizzle,
-    shadcn,
-    authProvider,
-    orm,
-    db,
-    internationalization,
+    projectDir: projectDirectory,
+    ...featureFlags
   } = options
-
   const name = await getProjectName(projectDirectory)
   const projectDir = await createProjectDirectory(name)
 
   // First, generate the base project.
-  await generateBaseProject(name)
+  await generateBaseProject(name, projectDir)
 
   // Then, prompt for the features.
   let featureOptions: Partial<FeatureOptions>
@@ -67,15 +49,7 @@ export async function handleNewProject(options: CLIOptions) {
   } else {
     // If the process is not interactive,
     // use the options passed from the CLI.
-    featureOptions = {
-      tailwind: tailwind || false,
-      drizzle: drizzle || false,
-      shadcn: shadcn || false,
-      authProvider: authProvider || "none",
-      orm: orm || "drizzle",
-      db: db || "postgres",
-      internationalization: internationalization || false,
-    }
+    featureOptions = featureFlags
   }
 
   // if Shadcn is enabled, Tailwind must be enabled.
@@ -84,3 +58,27 @@ export async function handleNewProject(options: CLIOptions) {
 
   await scaffoldProject(validatedOptions, name, projectDir)
 }
+
+export const createCommand = new Command()
+  .name("create")
+  .description("Create a new Oneship project")
+  .argument("[dir]", "The directory to create the project in")
+  .option("--tailwind", "Enable Tailwind CSS")
+  .option("--drizzle", "Enable Drizzle ORM")
+  .option("--shadcn", "Enable Shadcn UI")
+  .option("--next-auth", "Enable NextAuth.js")
+  .option("--internationalization", "Enable Internationalization")
+  .action(async (dir, options) => {
+    const isInteractive =
+      !options.tailwind &&
+      !options.drizzle &&
+      !options.shadcn &&
+      !options.nextAuth &&
+      !options.internationalization
+
+    await handleNewProject({
+      projectDir: dir,
+      isInteractive,
+      ...options,
+    })
+  })

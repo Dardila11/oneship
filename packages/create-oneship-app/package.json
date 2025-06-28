@@ -2,6 +2,7 @@
   "name": "create-oneship-app",
   "version": "0.1.0",
   "description": "Create a new Oneship app ",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -21,18 +22,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
-    "commander": "^11.0.0",
-    "dotenv": "^16.5.0",
-    "execa": "^9.6.0",
-    "fs-extra": "^11.3.0",
-    "hygen": "/Users/danielardila/Documents/web_projects/hygen",
-    "path": "^0.12.7",
-    "prompts": "^2.4.2"
+    "@oneship/cli": "workspace:*"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.0.0",
-    "@types/pg": "^8.15.4",
     "tsx": "^4.20.3",
     "typescript": "^5.0.0"
   }

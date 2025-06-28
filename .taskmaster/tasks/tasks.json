@@ -194,63 +194,64 @@
       {
         "id": 4,
         "title": "Create Template Package",
-        "description": "Develop the templates package containing source files for generating projects and features, including auth integrations, database setups, and feature scaffolding.",
-        "details": "1. Initialize the templates package:\n   ```bash\n   cd packages/templates\n   pnpm init\n   ```\n2. Create folder structure for different templates:\n   ```\n   templates/\n   ├── project/              # Base project templates\n   │   ├── next-app/        # Next.js app router template\n   │   └── next-pages/      # Next.js pages router template\n   ├── auth/                # Auth integration templates\n   │   ├── clerk/\n   │   ├── next-auth/\n   │   └── supabase/\n   ├── db/                  # Database integration templates\n   │   ├── prisma/\n   │   ├── drizzle/\n   │   └── supabase/\n   ├── features/            # Feature templates\n   │   ├── dashboard/\n   │   └── profile/\n   └── env/                 # Environment configuration templates\n   ```\n3. Create base Next.js app template with the following structure:\n   ```\n   next-app/\n   ├── app/\n   │   ├── layout.tsx\n   │   └── page.tsx\n   ├── features/\n   │   └── core/\n   │       ├── layout/\n   │       ├── components/\n   │       └── hooks/\n   ├── public/\n   ├── styles/\n   ├── .env.example\n   ├── next.config.js\n   ├── package.json\n   ├── tailwind.config.ts\n   ├── tsconfig.json\n   └── README.md\n   ```\n4. Implement auth templates for different providers (Clerk, NextAuth.js, Supabase)\n5. Create database templates for Prisma, Drizzle, and Supabase\n6. Develop feature templates for common features like dashboard, profile, etc.\n7. Implement environment configuration templates\n8. Use EJS or similar templating for dynamic content",
-        "testStrategy": "Verify template files are correctly structured and contain valid syntax. Test template rendering with different variables and configurations. Ensure generated files are valid TypeScript/JavaScript and can be compiled. Test integration with the CLI package to ensure templates are correctly applied.",
-        "priority": "medium",
+        "description": "Develop the templates package containing source files for generating projects and features, including auth integrations, database setups, and feature scaffolding. This package will be part of the engine that handles the business logic for scaffolding OneShip projects.",
+        "status": "pending",
         "dependencies": [
           2
         ],
-        "status": "pending",
+        "priority": "medium",
+        "details": "1. Initialize the templates package:\n   ```bash\n   cd packages/templates\n   pnpm init\n   ```\n2. Create folder structure for different templates:\n   ```\n   templates/\n   ├── project/              # Base project templates\n   │   ├── next-app/        # Next.js app router template\n   │   └── next-pages/      # Next.js pages router template\n   ├── auth/                # Auth integration templates\n   │   ├── clerk/\n   │   ├── next-auth/\n   │   └── supabase/\n   │   ├── lucia/           # Lucia auth (in development)\n   │   └── better-auth/     # BetterAuth option\n   ├── db/                  # Database integration templates\n   │   ├── prisma/\n   │   ├── drizzle/\n   │   └── supabase/\n   ├── features/            # Feature templates\n   │   ├── dashboard/\n   │   └── profile/\n   └── env/                 # Environment configuration templates\n   ```\n3. Create base Next.js app template with the following structure:\n   ```\n   next-app/\n   ├── app/\n   │   ├── layout.tsx\n   │   └── page.tsx\n   ├── features/\n   │   └── core/\n   │       ├── layout/\n   │       ├── components/\n   │       └── hooks/\n   ├── public/\n   ├── styles/\n   ├── .env.example\n   ├── next.config.js\n   ├── package.json\n   ├── tailwind.config.ts\n   ├── tsconfig.json\n   └── README.md\n   ```\n4. Implement auth templates for different providers (Next-Auth, Clerk, Supabase, Lucia, BetterAuth)\n5. Create database templates for Prisma, Drizzle, and Supabase\n6. Develop feature templates for common features like dashboard, profile, etc.\n7. Implement environment configuration templates\n8. Use EJS or similar templating for dynamic content\n9. Design the templates to work within the engine package that will contain all business logic for scaffolding",
+        "testStrategy": "Verify template files are correctly structured and contain valid syntax. Test template rendering with different variables and configurations. Ensure generated files are valid TypeScript/JavaScript and can be compiled. Test integration with the engine package to ensure templates are correctly applied. Verify that the templates support all the interactive options shown in the CLI prompts.",
         "subtasks": [
           {
             "id": 1,
             "title": "Implement base Next.js app templates",
             "description": "Create base templates for Next.js app router and pages router projects",
+            "status": "pending",
             "dependencies": [],
             "details": "Develop the base Next.js app templates for both app router and pages router, including the folder structure, essential files, and basic configurations. Ensure the templates include placeholders for auth and database integrations.",
-            "status": "pending",
             "testStrategy": "Manually verify the structure and content of the created templates. Test by generating a project using each template and ensuring it builds and runs without errors."
           },
           {
             "id": 2,
             "title": "Develop auth integration templates",
-            "description": "Create templates for Clerk, NextAuth.js, and Supabase auth integrations",
+            "description": "Create templates for Next-Auth, Clerk, Supabase, Lucia, and BetterAuth integrations",
+            "status": "pending",
             "dependencies": [
               1
             ],
-            "details": "Implement auth templates for Clerk, NextAuth.js, and Supabase. Include necessary configuration files, API routes, and components for each auth provider. Use placeholders for sensitive information like API keys.",
-            "status": "pending",
+            "details": "Implement auth templates for Next-Auth, Clerk, Supabase, Lucia (marked as in development), and BetterAuth. Include necessary configuration files, API routes, and components for each auth provider. Use placeholders for sensitive information like API keys.",
             "testStrategy": "Create test projects using each auth template. Verify that authentication flows (sign up, sign in, sign out) work correctly for each provider."
           },
           {
             "id": 3,
             "title": "Create database integration templates",
             "description": "Develop templates for Prisma, Drizzle, and Supabase database integrations",
+            "status": "pending",
             "dependencies": [
               1
             ],
             "details": "Implement database templates for Prisma, Drizzle, and Supabase. Include configuration files, schema definitions, and basic CRUD operations for each ORM/database solution. Use placeholders for connection strings and other sensitive data.",
-            "status": "pending",
             "testStrategy": "Generate test projects with each database template. Verify that database connections can be established and basic CRUD operations work as expected."
           },
           {
             "id": 4,
             "title": "Implement feature templates",
             "description": "Create templates for common features like dashboard and profile",
+            "status": "pending",
             "dependencies": [
               1,
               2,
               3
             ],
             "details": "Develop feature templates for dashboard and profile components. Include necessary pages, components, and API routes. Ensure these templates can be easily integrated with different auth and database solutions.",
-            "status": "pending",
             "testStrategy": "Create test projects that include these feature templates. Verify that the features render correctly and interact properly with the chosen auth and database integrations."
           },
           {
             "id": 5,
             "title": "Set up templating system and package structure",
             "description": "Implement EJS templating and organize the package structure",
+            "status": "pending",
             "dependencies": [
               1,
               2,
@@ -258,8 +259,29 @@
               4
             ],
             "details": "Set up EJS or a similar templating system for dynamic content generation. Organize the package structure to include all created templates. Implement a system for combining different templates (base, auth, database, features) into a cohesive project structure.",
-            "status": "pending",
             "testStrategy": "Test the templating system by generating projects with various combinations of templates. Ensure that the resulting projects are correctly structured and all placeholders are properly replaced."
+          },
+          {
+            "id": 6,
+            "title": "Integrate with engine package architecture",
+            "description": "Adapt templates to work within the engine package that contains all business logic",
+            "status": "pending",
+            "dependencies": [
+              5
+            ],
+            "details": "Refactor the templates to work within the new architecture where the engine package contains all business logic for scaffolding and configuring a OneShip project. Ensure the templates can be easily accessed and used by the engine package without direct dependency on CLI-specific code.",
+            "testStrategy": "Verify that the templates can be correctly loaded and processed by the engine package. Test the integration by generating projects through the engine API and ensure all templates are correctly applied."
+          },
+          {
+            "id": 7,
+            "title": "Support interactive CLI options",
+            "description": "Ensure templates support all options shown in CLI prompts",
+            "status": "pending",
+            "dependencies": [
+              6
+            ],
+            "details": "Update templates to support all the interactive options shown in the CLI prompts, including project naming, Tailwind CSS integration, and the full range of authentication providers (Next-Auth, Clerk, Supabase Auth, Lucia, BetterAuth, and None).",
+            "testStrategy": "Test each template with various combinations of CLI options. Verify that the generated projects correctly implement all selected options and that the templates handle all possible combinations gracefully."
           }
         ]
       },
@@ -400,11 +422,25 @@
         ],
         "status": "pending",
         "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Refactor create-oneship-app into CLI and Core Packages",
+        "description": "Refactor the existing packages/create-oneship-app into separate packages/cli and packages/core to improve modularity and maintainability of the codebase.",
+        "details": "1. Analyze the current structure of packages/create-oneship-app:\n   ```bash\n   # Examine the current structure\n   ls -la packages/create-oneship-app\n   ```\n\n2. Create the new package structure if not already present:\n   ```bash\n   mkdir -p packages/cli packages/core\n   ```\n\n3. Move CLI-specific functionality to packages/cli:\n   - Command-line interface code\n   - Command handlers\n   - User interaction logic\n   - CLI entry points\n   - CLI-specific utilities\n\n4. Move core functionality to packages/core:\n   - Shared utilities\n   - Template rendering logic\n   - File system operations\n   - Package management utilities\n   - Configuration handling\n\n5. Update package.json files for both packages:\n   - Set appropriate dependencies\n   - Configure build scripts\n   - Set up TypeScript configuration\n   - Define entry points\n\n6. Update import statements across the codebase:\n   ```typescript\n   // Before\n   import { someFunction } from '../utils';\n   \n   // After\n   import { someFunction } from '@oneship/core';\n   ```\n\n7. Set up proper exports in both packages:\n   ```typescript\n   // packages/core/src/index.ts\n   export * from './fs';\n   export * from './template';\n   export * from './package';\n   // etc.\n   \n   // packages/cli/src/index.ts\n   #!/usr/bin/env node\n   import { Command } from 'commander';\n   // CLI implementation\n   ```\n\n8. Update build configuration:\n   - Ensure TypeScript configs are properly set up\n   - Configure proper build output directories\n   - Set up proper module resolution\n\n9. Implement proper cross-package dependencies:\n   ```json\n   // packages/cli/package.json\n   {\n     \"dependencies\": {\n       \"@oneship/core\": \"workspace:*\",\n       \"commander\": \"^x.x.x\",\n       // other dependencies\n     }\n   }\n   ```\n\n10. Remove the original packages/create-oneship-app once the refactoring is complete and verified.",
+        "testStrategy": "1. Verify package structure:\n   - Ensure all necessary files have been moved to the appropriate packages\n   - Check that no critical functionality has been lost\n\n2. Test package builds:\n   ```bash\n   cd packages/core\n   pnpm build\n   cd ../cli\n   pnpm build\n   ```\n\n3. Test CLI functionality:\n   ```bash\n   # Create a test project using the refactored CLI\n   node packages/cli/dist/index.js create my-test-app\n   ```\n\n4. Run unit tests for both packages:\n   ```bash\n   cd packages/core\n   pnpm test\n   cd ../cli\n   pnpm test\n   ```\n\n5. Verify cross-package imports work correctly:\n   - Check that CLI can properly import and use core functionality\n   - Ensure no circular dependencies exist\n\n6. Test all CLI commands to ensure they still work as expected:\n   - Test project creation\n   - Test adding features\n   - Test other commands\n\n7. Perform integration tests:\n   - Create a new project\n   - Add authentication\n   - Add database\n   - Verify the generated project builds and runs correctly\n\n8. Check for regressions by comparing the output of the original create-oneship-app with the refactored CLI for the same commands.",
+        "status": "pending",
+        "dependencies": [
+          2,
+          3
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "created": "2025-06-15T19:14:07.600Z",
-      "updated": "2025-06-21T06:45:37.573Z",
+      "updated": "2025-06-27T23:59:49.870Z",
       "description": "Tasks for master context"
     }
   }
